@@ -23,6 +23,7 @@ class clubSeeder extends Seeder
       {
         DB::table('clubs')->insert([
             'name' => $sports[$i],
+            'attribute' => 'sports',
             'created_at'     => now(),
             'updated_at'     => now(),
         ]);
@@ -30,7 +31,8 @@ class clubSeeder extends Seeder
       for ($i = 0; $i < count($liberal_arts); $i++)
       {
         DB::table('clubs')->insert([
-            'name' => $sports[$i],
+            'name' => $liberal_arts[$i],
+            'attribute' => 'liberal_arts',
             'created_at'     => now(),
             'updated_at'     => now(),
         ]);

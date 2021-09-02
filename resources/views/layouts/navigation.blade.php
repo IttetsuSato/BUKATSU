@@ -16,6 +16,24 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
                 </div>
+
+                {{-- 管理者用リンク --}}
+                @if(Auth::user()->attribute === 'administrator')
+
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                  <x-nav-link :href="route('club.index')" :active="request()->routeIs('club.index')">
+                    {{ __('Index') }}
+                  </x-nav-link>
+                </div>
+
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                  <x-nav-link :href="route('club.create')" :active="request()->routeIs('club.create')">
+                    {{ __('Create') }}
+                  </x-nav-link>
+                </div>
+
+                @endif
+                {{-- 管理者用リンク終わり --}}
             </div>
 
             <!-- Settings Dropdown -->
@@ -67,6 +85,21 @@
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
         </div>
+
+        {{-- 管理者用リンク --}}
+        @if(Auth::user()->attribute === 'administrator')
+        <div class="pt-2 pb-3 space-y-1">
+          <x-responsive-nav-link :href="route('club.index')" :active="request()->routeIs('club.index')">
+            {{ __('Index') }}
+          </x-responsive-nav-link>
+        </div>
+        <div class="pt-2 pb-3 space-y-1">
+          <x-responsive-nav-link :href="route('club.create')" :active="request()->routeIs('club.create')">
+            {{ __('Create') }}
+          </x-responsive-nav-link>
+        </div>
+        @endif
+        {{-- 管理者用リンク終わり --}}
 
         <!-- Responsive Settings Options -->
         <div class="pt-4 pb-1 border-t border-gray-200">

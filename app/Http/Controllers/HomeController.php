@@ -9,7 +9,7 @@ class HomeController extends Controller
   public function index()
   {
     $news = [];
-    return view('welcome', [
+    return view('index', [
       'news' => $news
     ]);
   }

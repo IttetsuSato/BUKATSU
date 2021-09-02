@@ -62,7 +62,8 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+      $user = User::find($id);
+      return view('user.edit', ['user' => $user]);
     }
 
     /**
@@ -74,7 +75,21 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      //バリデーション
+      $validator = Validator::make($request->all(), [
+        'name' => 'required | max:191',
+      ]);
+      //バリデーション:エラー
+      if ($validator->fails()) {
+        return redirect()
+          ->route('user.edit', $id)
+          ->withInput()
+          ->withErrors($validator);
+      }
+      //データ更新処理
+      // updateは更新する情報がなくても更新が走る（updated_atが更新される）
+      $result = User::find($id)->update($request->all());
+      return redirect()->route('user.index');
     }
 
     /**
@@ -85,6 +100,7 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+      $result = User::find($id)->delete();
+      return redirect()->route('user.index');
     }
 }

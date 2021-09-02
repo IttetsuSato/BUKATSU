@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClubController;
+use App\Http\Controllers\UserController;
 
 
 /*
@@ -19,6 +20,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::resource('user', UserController::class, ['only' => ['index','show', 'edit', 'update','destroy']]);
 Route::resource('club', ClubController::class);
 
 Route::get('/dashboard', function () {

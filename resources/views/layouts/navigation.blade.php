@@ -22,13 +22,19 @@
 
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                   <x-nav-link :href="route('club.index')" :active="request()->routeIs('club.index')">
-                    {{ __('Index') }}
+                    {{ __('部活一覧') }}
+                  </x-nav-link>
+                </div>
+
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                  <x-nav-link :href="route('user.index')" :active="request()->routeIs('user.index')">
+                    {{ __('登録者一覧') }}
                   </x-nav-link>
                 </div>
 
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                   <x-nav-link :href="route('club.create')" :active="request()->routeIs('club.create')">
-                    {{ __('Create') }}
+                    {{ __('部活追加') }}
                   </x-nav-link>
                 </div>
 
@@ -90,7 +96,12 @@
         @if(Auth::user()->attribute === 'administrator')
         <div class="pt-2 pb-3 space-y-1">
           <x-responsive-nav-link :href="route('club.index')" :active="request()->routeIs('club.index')">
-            {{ __('Index') }}
+            {{ __('部活一覧') }}
+          </x-responsive-nav-link>
+        </div>
+        <div class="pt-2 pb-3 space-y-1">
+          <x-responsive-nav-link :href="route('user.index')" :active="request()->routeIs('user.index')">
+            {{ __('登録者一覧') }}
           </x-responsive-nav-link>
         </div>
         <div class="pt-2 pb-3 space-y-1">

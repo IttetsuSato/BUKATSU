@@ -17,10 +17,10 @@ class User extends Authenticatable
      *
      * @var string[]
      */
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
+    protected $guarded = [
+      'id',
+      'created_at',
+      'updated_at',
     ];
 
     /**
@@ -41,4 +41,16 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    public static function getUsers()
+    {
+      $users = self::orderBy('attribute', 'asc')->get();
+      // if($attribute == ''){
+      // }else{
+      //   $users = self::where('attribute', $attribute)->orderBy('name', 'asc')->get();
+      // }
+      // ddd($users);
+      return $users;
+    }
 }

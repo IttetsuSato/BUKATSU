@@ -19,4 +19,9 @@ class Club extends Model
     {
       return self::orderBy('name', 'asc')->get();
     }
+
+    public static function getAllClubOrderByAttribute()
+    {
+      return self::orderBy('attribute', 'desc')->orderby('name', 'asc')->get();
+    }
 }

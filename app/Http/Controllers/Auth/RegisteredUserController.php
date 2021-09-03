@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
+use App\Models\Club;
 
 class RegisteredUserController extends Controller
 {
@@ -20,7 +21,12 @@ class RegisteredUserController extends Controller
      */
     public function create()
     {
-        return view('auth.register');
+
+      $clubs = Club::getAllClubOrderByAttribute();
+
+        return view('auth.register', [
+          'clubs' => $clubs
+        ]);
     }
 
     /**
@@ -35,14 +41,25 @@ class RegisteredUserController extends Controller
     {
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
+            'katakana' => ['string', 'max:255'],
+            'attribute' => ['required', 'string', 'max:32'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            'birthday' => ['date'],
+            'sex' => ['string'],
+            'club' => ['string'],
+            'year' => ['integer'],
+            'area' => ['required','string'],
         ]);
 
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
+            'katakana' => $request->katakana,
+            'attribute' => $request->attribute,
             'password' => Hash::make($request->password),
+            'birthday' => $request->birthday,
+            'sex' => $request->sex,
         ]);
 
         event(new Registered($user));

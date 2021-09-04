@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class City extends Model
 {
     use HasFactory;
+
+    public $timestamps = false;
+
+    public static function getAllCity()
+    {
+      $cities = self::get();
+      $collection = collect($cities);
+      $citiesGroup = $collection->groupBy('area_id');
+        return $citiesGroup;
+      }
 }

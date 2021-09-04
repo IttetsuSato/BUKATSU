@@ -3800,7 +3800,15 @@ module.exports = {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
-__webpack_require__(/*! alpinejs */ "./node_modules/alpinejs/dist/alpine.js");
+__webpack_require__(/*! alpinejs */ "./node_modules/alpinejs/dist/alpine.js"); // 地域の選択によって市町村のセレクトボックスが変わる(register.blade.php)
+
+
+var areaSelect = document.getElementById('area');
+areaSelect.addEventListener('change', function (e) {
+  var area_id = e.target.value;
+  var displayCityOptions = document.getElementById('citiesGroup' + area_id);
+  displayCityOptions.className = 'block';
+});
 
 /***/ }),
 

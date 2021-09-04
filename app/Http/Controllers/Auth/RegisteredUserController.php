@@ -25,8 +25,16 @@ class RegisteredUserController extends Controller
       $clubs = Club::getAllClubOrderByAttribute();
 
         return view('auth.register', [
-          'clubs' => $clubs
+          'clubs' => $clubs,
+          'attribute' => 'civilian'
         ]);
+    }
+
+    public function createSchool()
+    {
+      return view('auth.register', [
+        'attribute' => 'school'
+      ]);
     }
 
     /**

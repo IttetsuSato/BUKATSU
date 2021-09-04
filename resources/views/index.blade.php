@@ -5,6 +5,23 @@
       </h2>
   </x-slot>
 
+  {{-- 非ログイン時 --}}
+  @auth
+  @else
+    <section>
+      <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">ログイン</a>
+
+          <div>
+            <p>学校</p>
+            <a href="{{ route('registerSchool') }}" class="ml-4 text-sm text-gray-700 underline">新規登録</a>
+          </div>
+          <div>
+            <p>指導者</p>
+            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">新規登録</a>
+          </div>
+    </section>
+  @endauth
+  {{-- ここまで非ログイン時 --}}
   <div class="py-12">
       <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
           <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">

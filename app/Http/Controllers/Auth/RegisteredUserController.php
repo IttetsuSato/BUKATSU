@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use App\Models\Club;
+use App\Models\Area;
 
 class RegisteredUserController extends Controller
 {
@@ -23,16 +24,20 @@ class RegisteredUserController extends Controller
     {
 
       $clubs = Club::getAllClubOrderByAttribute();
+      $areas = Area::getAllArea();
 
         return view('auth.register', [
           'clubs' => $clubs,
+          'areas' => $areas,
           'attribute' => 'civilian'
         ]);
     }
 
     public function createSchool()
     {
+      $areas = Area::getAllArea();
       return view('auth.register', [
+        'areas' => $areas,
         'attribute' => 'school'
       ]);
     }

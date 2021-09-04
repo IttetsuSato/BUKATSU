@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class AreaSeeder extends Seeder
+class CitySeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -224,10 +224,15 @@ class AreaSeeder extends Seeder
         ),
       );
 
+      $index = 0;
       foreach($areas as $key => $area){
-        DB::table('areas')->insert([
-            'name' => $key,
-        ]);
+        foreach($area as $city){
+          DB::table('cities')->insert([
+              'name' => $city,
+              'area_id' => $index+1,
+          ]);
+        }
+        $index++;
       }
     }
 }

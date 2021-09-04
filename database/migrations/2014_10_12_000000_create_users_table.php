@@ -18,7 +18,7 @@ class CreateUsersTable extends Migration
             $table->string('name', 32);
             $table->string('katakana', 32)->nullable();
             $table->string('attribute',32);
-            $table->string('area')->nullable();
+            $table->bigInteger('city_id')->nullable();
             $table->string('image')->nullable();
             $table->string('profile',500)->nullable();
             $table->date('birthday')->nullable();

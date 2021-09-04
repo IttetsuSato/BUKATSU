@@ -74,7 +74,7 @@
               <!-- 指導種目 -->
               <div class="mt-4">
                 <x-label for="club" :value="__('指導種目')" />
-                <select class="border py-2 px-5 pr-8 rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="club" id="club" required>
+                <select class="border py-2 px-5 pr-8 rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="club" id="club" required autofocus>
                   <option disabled selected value> -- 種目を選択 -- </option>
                   @foreach($clubs as $club)
                   <option value="{{ $club->id }}">{{ $club->name }}</option>
@@ -85,7 +85,7 @@
               <!-- 指導年数 -->
               <div class="mt-4">
                 <x-label for="year" :value="__('指導歴（年）')" />
-                <select class="border py-2 px-5 rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="year" id="year">
+                <select class="border py-2 px-5 rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="year" id="year" required autofocus>
                   <option value="">-</option>
                   <option value="0">0</option>
                   <option value="1">1</option>
@@ -124,9 +124,13 @@
               <!-- エリア -->
               <div class="mt-4">
                 <x-label for="area" :value="__('エリア')" />
-                <select class="border py-2 px-5 pr-8 rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="area" id="area">
-                  <option value="civilian">スポーツクライミング</option>
-                  <option value="school">学校</option>
+                {{dd($areas)}}
+                <select class="border py-2 px-5 pr-8 rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="area" id="area" required autofocus>
+                  <option disabled selected value> -- 地域を選択 -- </option>
+
+                  @foreach($areas as $area)
+                  <option value="{{ $area->name }}">{{ $area->name }}</option>
+                  @endforeach
                 </select>
               </div>
             @endif
@@ -176,7 +180,7 @@
                   <div class="mt-4">
                     <x-label for="area" :value="__('エリア')" />
       
-                    <select class="border py-2 px-5 pr-8 rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="area" id="area">
+                    <select class="border py-2 px-5 pr-8 rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="area" id="area" required autofocus>
                       <option value="civilian">スポーツクライミング</option>
                       <option value="school">学校</option>
                     </select>

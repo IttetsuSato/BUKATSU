@@ -11,6 +11,13 @@ class City extends Model
 
     public $timestamps = false;
 
+
+
+    public function area()
+    {
+      return $this->belongsTo('App\Models\Area');
+    }
+
     public static function getAllCity()
     {
       $cities = self::get();

@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ClubController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\AreaController;
+use App\Http\Controllers\CityController;
 
 
 /*
@@ -18,16 +20,23 @@ use App\Http\Controllers\UserController;
 */
 
 Route::get('/', [HomeController::class, 'index']);
+Route::get('/', [HomeController::class, 'index'])
+->name('top');
+
+
+Route::get('/user.{city_id}.city', [UserController::class, 'indexByCity'])
+->name('user.city');
+
+
+// Route::get('/searchByArea', AreaController::class, 'searchByArea');
+Route::resource('area', AreaController::class,['only' => ['index']]);
+Route::resource('city', CityController::class,['only' => ['index']]);
 
 //以下はログインしないと動作しない
 Route::group(['middleware' => 'auth'], function(){
 
   Route::resource('user', UserController::class, ['only' => ['index','show', 'edit', 'update','destroy']]);
   Route::resource('club', ClubController::class);
-  
-  Route::get('/dashboard', function () {
-      return view('dashboard');
-  })->name('dashboard');
   
 });
 

@@ -22,13 +22,23 @@
     </section>
   @endauth
   {{-- ここまで非ログイン時 --}}
-  <div class="py-12">
-      <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-          <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-              <div class="p-6 bg-white border-b border-gray-200">
-                  You're logged in!
-              </div>
-          </div>
-      </div>
-  </div>
+
+  <section>
+    <div class="py-12">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-6 bg-white border-b border-gray-200">
+                  <div>
+                    <a href="{{ route('area.index') }}" class="ml-4 text-sm text-gray-700">地域から探す</a>
+                  </div>
+                  <div>
+                    <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700">種目から探す</a>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">ログイン</a>
+
+  </section>
 </x-app-layout>

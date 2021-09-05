@@ -50,11 +50,12 @@ class User extends Authenticatable
     public static function getUsers()
     {
       $users = self::orderBy('attribute', 'asc')->get();
-      // if($attribute == ''){
-      // }else{
-      //   $users = self::where('attribute', $attribute)->orderBy('name', 'asc')->get();
-      // }
-      // ddd($users);
+      return $users;
+    }
+
+    public static function getUsersByClubAndArea($club_id, $area_id)
+    {
+      $users = self::where('area_id', $area_id)->get();
       return $users;
     }
 }

@@ -11,6 +11,11 @@ class Area extends Model
   use HasFactory;
   
   public $timestamps = false;
+
+  public function cities()
+  {
+    return $this->hasMany('App\Models\City');
+  }
   
   public static function getAllArea()
   {

@@ -29,10 +29,10 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
                   <div>
-                    <a href="{{ route('area.index') }}" class="ml-4 text-sm text-gray-700">地域から探す</a>
+                    <a href="{{ route('area.search') }}" class="ml-4 text-sm text-gray-700">地域から探す</a>
                   </div>
                   <div>
-                    <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700">種目から探す</a>
+                    <a href="{{ route('club.search') }}" class="ml-4 text-sm text-gray-700">種目から探す</a>
                   </div>
                 </div>
             </div>

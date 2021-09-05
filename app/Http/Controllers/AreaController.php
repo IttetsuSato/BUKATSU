@@ -8,6 +8,11 @@ use App\Models\City;
 
 class AreaController extends Controller
 {
+  public function search()
+  {
+    $areas = Area::all();
+    return view('search.area',compact('areas'));
+  }
     /**
      * Display a listing of the resource.
      *
@@ -15,8 +20,7 @@ class AreaController extends Controller
      */
     public function index()
     {
-        $areas = Area::all();
-        return view('search.area',compact('areas'));
+      
     }
 
     /**

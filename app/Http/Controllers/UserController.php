@@ -16,6 +16,7 @@ class UserController extends Controller
       'users' => $users
     ]);
   }
+  
     /**
      * Display a listing of the resource.
      *

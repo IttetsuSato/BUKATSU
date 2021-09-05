@@ -8,6 +8,21 @@ use App\Models\Club;
 
 class ClubController extends Controller
 {
+
+  public function search()
+  {
+    $clubs = Club::all();
+    return view('search.club',compact('clubs'));
+  }
+
+
+  public function indexUserByClub($club_id)
+  {
+    $users = club::find($club_id)->users()->where('attribute', 'civilian')->get();
+    return view('user.index',[
+      'users' => $users
+    ]);
+  }
     /**
      * Display a listing of the resource.
      *

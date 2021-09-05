@@ -63,6 +63,7 @@ class UserController extends Controller
     public function edit($id)
     {
       $user = User::find($id);
+      // $clubs = $user->clubs
       return view('user.edit', ['user' => $user]);
     }
 

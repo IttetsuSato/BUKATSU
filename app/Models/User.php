@@ -42,6 +42,10 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public function clubs()
+    {
+      return $this->belongsToMany('App\Models\Club')->withTimestamps();
+    }
 
     public static function getUsers()
     {

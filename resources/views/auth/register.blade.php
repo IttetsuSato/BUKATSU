@@ -5,6 +5,7 @@
     </h2>
   </x-slot>
 
+  <x-auth-card>
     <!-- Validation Errors -->
     <x-auth-validation-errors class="mb-4" :errors="$errors" />
 
@@ -73,7 +74,7 @@
           <!-- 指導種目 -->
           <div class="mt-4">
             <x-label for="club" :value="__('指導種目')" />
-            <select class="border py-2 px-5 pr-8 rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="club" id="club" required autofocus>
+            <select class="border py-2 px-5 pr-8 rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="club_id" id="club" required autofocus>
               <option disabled selected value> -- 種目を選択 -- </option>
               @foreach($clubs as $club)
               <option value="{{ $club->id }}">{{ $club->name }}</option>
@@ -83,8 +84,8 @@
 
           <!-- 指導年数 -->
           <div class="mt-4">
-            <x-label for="year" :value="__('指導歴（年）')" />
-            <select class="border py-2 px-5 rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="year" id="year" required autofocus>
+            <x-label for="career" :value="__('指導歴（年）')" />
+            <select class="border py-2 px-5 rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="career" id="career" required autofocus>
               <option value="">-</option>
               <option value="0">0</option>
               <option value="1">1</option>
@@ -192,10 +193,27 @@
               <!-- エリア -->
               <div class="mt-4">
                 <x-label for="area" :value="__('エリア')" />
-  
                 <select class="border py-2 px-5 pr-8 rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="area" id="area" required autofocus>
-                  <option value="civilian">スポーツクライミング</option>
-                  <option value="school">学校</option>
+                  <option disabled selected value> -- 地域を選択 -- </option>
+
+                  @foreach($areas as $area)
+                  <option value="{{ $area->id }}">{{ $area->name }}</option>
+                  @endforeach
+                </select>
+              </div>
+
+              <!-- 市町村 -->
+              <div class="mt-4">
+                <x-label for="city" :value="__('市町村')" />
+                <select class="border py-2 px-5 pr-8 rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="city_id" id="city"required autofocus>
+                  <option disabled selected value> -- 市町村を選択 -- </option>
+                  @foreach($citiesGroup as $key => $cities)
+                  <optgroup id="citiesGroup{{ $key }}" class="hidden">
+                      @foreach($cities as $city)
+                      <option value="{{ $city->id }}">{{ $city->name }}</option>
+                      @endforeach
+                    </optgroup>
+                  @endforeach
                 </select>
               </div>
               @endif
@@ -211,4 +229,5 @@
             </x-button>
         </div>
     </form>
+  </x-auth-card>
 </x-app-layout>

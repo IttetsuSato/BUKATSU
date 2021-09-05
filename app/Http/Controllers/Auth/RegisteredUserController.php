@@ -39,8 +39,10 @@ class RegisteredUserController extends Controller
     public function createSchool()
     {
       $areas = Area::getAllArea();
+      $citiesGroup = City::getAllCity();
       return view('auth.register', [
         'areas' => $areas,
+        'citiesGroup' => $citiesGroup,
         'attribute' => 'school'
       ]);
     }
@@ -64,8 +66,8 @@ class RegisteredUserController extends Controller
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
             'birthday' => ['date'],
             'sex' => ['string'],
-            'club' => ['string'],
-            'year' => ['integer'],
+            'club_id' => ['string'],
+            'career' => ['integer'],
         ]);
 
         $user = User::create([
@@ -77,7 +79,11 @@ class RegisteredUserController extends Controller
             'password' => Hash::make($request->password),
             'birthday' => $request->birthday,
             'sex' => $request->sex,
+            'career' => $request->career,
         ]);
+
+      //中間テーブルへの保存
+      $user->clubs()->sync($request->club_id);
 
         event(new Registered($user));
 

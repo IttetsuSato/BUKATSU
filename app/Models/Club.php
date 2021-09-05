@@ -15,6 +15,11 @@ class Club extends Model
       'updated_at',
     ];
 
+    public function users()
+    {
+      return $this->belongsToMany('App\Models\User')->withPivot('career')->withTimestamps();
+    }
+
     public static function getAllClubByName()
     {
       return self::orderBy('name', 'asc')->get();

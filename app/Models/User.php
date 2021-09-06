@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 
 class User extends Authenticatable
 {
@@ -53,9 +55,17 @@ class User extends Authenticatable
       return $users;
     }
 
-    public static function getUsersByClubAndArea($club_id, $area_id)
+    public static function getUsersGroupedByDate($count)
     {
-      $users = self::where('area_id', $area_id)->get();
-      return $users;
+      $users = self::orderBy('created_at', 'desc')->get();
+      $converted = $users->map(function ($user) {
+        return array(
+          'date' => $user->created_at->format('Y.m.d'),
+          'user' => $user->all(),
+        );
+      });
+      $news = $converted->groupBy('date')->take($count);
+
+        return $news;
     }
 }

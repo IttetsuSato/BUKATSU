@@ -9,7 +9,6 @@
   @auth
   @else
     <section>
-      <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">ログイン</a>
 
           <div>
             <p>学校</p>
@@ -38,7 +37,12 @@
             </div>
         </div>
     </div>
-    <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">ログイン</a>
 
+  </section>
+  
+  <section>
+    @foreach($news as $new)
+    
+    @endforeach
   </section>
 </x-app-layout>

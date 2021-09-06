@@ -14,8 +14,14 @@
               <tr>
                 <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-lg text-grey-dark border-b border-grey-light">名前</th>
                 <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-lg text-grey-dark border-b border-grey-light">イメージ</th>
+                {{-- 管理者用項目 --}}
+                @auth
+                @if(Auth::user()->attribute === 'administrator')
                 <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-lg text-grey-dark border-b border-grey-light">属性</th>
                 <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-lg text-grey-dark border-b border-grey-light">操作</th>
+                @endif
+                @endauth
+                {{-- ここまで管理者用項目 --}}
               </tr>
             </thead>
             <tbody>
@@ -26,6 +32,7 @@
                 </td>
                 <td class="py-4 px-6 border-b border-grey-light">{{$user->image}}</td>
                 {{-- 管理者用項目 --}}
+                @auth
                 @if(Auth::user()->attribute === 'administrator')
                   <td class="py-4 px-6 border-b border-grey-light">{{$user->attribute}}</td>
                   <td class="py-4 px-6 border-b border-grey-light flex justify-center">
@@ -50,6 +57,7 @@
                     </form>
                   </td>
                 @endif
+                @endauth
                 {{-- ここまで管理者用項目 --}}
               </tr>
               @endforeach

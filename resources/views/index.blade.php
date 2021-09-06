@@ -8,16 +8,29 @@
   {{-- 非ログイン時 --}}
   @auth
   @else
-    <section>
+    <section class="bukatsu-section1">
 
-          <div>
-            <p>学校</p>
-            <a href="{{ route('registerSchool') }}" class="ml-4 text-sm text-gray-700 underline">新規登録</a>
+      <div class="sm:px-6 lg:px-8 pt-8">
+        <div class="text-center">
+          <p class="bukatsu-blue font-extrabold text-lg">BUKATSUは<br>部活と地域のスポーツ指導したい人を<br>つなぐアプリです</p>
+        </div>
+        <div class="flex justify-evenly mt-4">
+          <div class="bukatsu-register-button school">
+            <label>学校</label>
+            <button>
+              <a href="{{ route('registerSchool') }}">新規登録</a>
+            </button>
+
           </div>
-          <div>
-            <p>指導者</p>
-            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">新規登録</a>
+          <div class="bukatsu-register-button civilian">
+            <label>指導者</label>
+            <button>
+              <a href="{{ route('register') }}">新規登録</a>
+            </button>
           </div>
+        </div>
+      </div>
+
     </section>
   @endauth
   {{-- ここまで非ログイン時 --}}

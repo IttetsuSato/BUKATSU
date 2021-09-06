@@ -1,3 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.bukatsu-blue {
+  color: #3070B5;
+}
+
+.bukatsu-font {
+  font-family: "Helvetica Neue", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+}
+
+.bukatsu-navigation {
+  background-color: #3070B5;
+  border: solid 1px #707070;
+  color: #FFFFFF;
+  opacity: 1;
+}
+
+.bukatsu-dropdown {
+  color: #FFFFFF;
+  transition: 0.2s;
+}
+
+.bukatsu-hamburger {
+  color: #FFFFFF;
+  transition: 0.2s;
+  border-radius: 50%;
+}
+.bukatsu-hamburger:hover {
+  background-color: #F8D256;
+}
+.bukatsu-hamburger:focus {
+  background-color: #F8D256;
+}
+
+.bukatsu-section1 {
+  background-color: #F8FBFD;
+}
+
+.bukatsu-register-button {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: bold;
+  text-align: center;
+}
+.bukatsu-register-button label {
+  display: block;
+  width: 100%;
+  margin: 10px auto;
+}
+.bukatsu-register-button button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0;
+  border-radius: 9999px;
+  padding: 0.8rem 3.5rem;
+}
+.bukatsu-register-button button a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #FFFFFF;
+}
+.bukatsu-register-button.school label {
+  color: #F8D256;
+}
+.bukatsu-register-button.school button {
+  background-color: #F8D256;
+}
+.bukatsu-register-button.civilian label {
+  color: #EC5A47;
+}
+.bukatsu-register-button.civilian button {
+  background-color: #EC5A47;
+}
 /*! tailwindcss v2.2.9 | MIT License | https://tailwindcss.com */
 
 /*! modern-normalize v1.1.0 | MIT License | https://github.com/sindresorhus/modern-normalize */

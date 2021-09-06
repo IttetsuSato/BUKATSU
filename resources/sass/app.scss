@@ -1,0 +1,91 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+
+$theme-blue : #3070B5;
+$theme-darkblue: #416FB0;
+$theme-skyblue: #F8FBFD;
+$theme-gray: #707070;
+$theme-white: #FFFFFF;
+$theme-red: #EC5A47;
+$theme-yellow: #F8D256;
+$theme-font: "Helvetica Neue",
+              "Hiragino Kaku Gothic ProN",
+              "Hiragino Sans",
+              Meiryo,
+              sans-serif;
+
+.bukatsu-blue{
+  color: $theme-blue;
+}
+.bukatsu-font{
+  font-family: $theme-font;
+}
+
+.bukatsu-navigation{
+  background-color: $theme-blue;
+  border: solid 1px $theme-gray;
+  color: $theme-white;
+  opacity: 1;
+}
+
+.bukatsu-dropdown{
+  color: $theme-white;
+  transition: 0.2s;
+}
+.bukatsu-hamburger{
+  color: $theme-white;
+  transition: 0.2s;
+  border-radius: 50%;
+  &:hover{
+    background-color: $theme-yellow;
+  }
+  &:focus{
+    background-color: $theme-yellow;
+  }
+}
+.bukatsu-section1{
+  background-color: $theme-skyblue;
+}
+
+.bukatsu-register-button{
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: bold;
+  text-align: center;
+  label{
+    display: block;
+    width: 100%;
+    margin: 10px auto;
+  }
+  button{
+    -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+          border: 0;
+    border-radius: 9999px;
+    padding: 0.8rem 3.5rem;
+    a{
+      text-decoration: none;
+      font-weight: bold;
+      color: $theme-white;
+    }
+  }
+  &.school{
+    label{
+      color: $theme-yellow;
+    }
+    button{
+      background-color: $theme-yellow;
+    }
+  }
+  &.civilian{
+    label{
+      color: $theme-red;
+    }
+    button{
+      background-color: $theme-red;
+    }
+  }
+}

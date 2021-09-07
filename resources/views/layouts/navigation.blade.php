@@ -27,12 +27,6 @@
                     </x-nav-link>
                   </div>
 
-                  <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('club.create')" :active="request()->routeIs('club.create')">
-                      {{ __('部活追加') }}
-                    </x-nav-link>
-                  </div>
-
                   @endif
                   {{-- 管理者用リンク終わり --}}
                 @endauth
@@ -55,16 +49,28 @@
                       </x-slot>
     
                       <x-slot name="content">
-                          <!-- Authentication -->
-                          <form method="POST" action="{{ route('logout') }}">
-                              @csrf
-    
-                              <x-dropdown-link :href="route('logout')"
-                                      onclick="event.preventDefault();
-                                                  this.closest('form').submit();">
-                                  {{ __('Log Out') }}
-                              </x-dropdown-link>
-                          </form>
+                        <!-- 更新ボタン -->
+                        <form action="{{ route('user.edit', Auth::user()->id) }}" method="GET">
+                          @csrf
+                          
+                          <x-dropdown-link :href="route('user.edit', Auth::user()->id)"
+                            onclick="event.preventDefault();
+                                                this.closest('form').submit();">
+                            <i class="mr-2 fas fa-user"></i>
+                            {{ __('マイページ') }}
+                          </x-dropdown-link>
+                        </form>
+                        <!-- Authentication -->
+                        <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+
+                            <x-dropdown-link :href="route('logout')"
+                            onclick="event.preventDefault();
+                                                this.closest('form').submit();">
+                                <i class="mr-2 fas fa-sign-out-alt"></i>
+                                {{ __('ログアウト') }}
+                            </x-dropdown-link>
+                        </form>
                       </x-slot>
                   </x-dropdown>
               @else
@@ -116,14 +122,26 @@
             </div>
 
             <div class="mt-3 space-y-1">
+                <!-- 更新ボタン -->
+                <form action="{{ route('user.edit', Auth::user()->id) }}" method="GET">
+                  @csrf
+                  
+                  <x-responsive-nav-link :href="route('user.edit', Auth::user()->id)"
+                    onclick="event.preventDefault();
+                                        this.closest('form').submit();">
+                    <i class="mr-2 fas fa-user"></i>
+                    {{ __('マイページ') }}
+                  </x-responsive-nav-link>
+                </form>
                 <!-- Authentication -->
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
 
                     <x-responsive-nav-link :href="route('logout')"
-                            onclick="event.preventDefault();
+                    onclick="event.preventDefault();
                                         this.closest('form').submit();">
-                        {{ __('Log Out') }}
+                        <i class="mr-2 fas fa-sign-out-alt"></i>
+                        {{ __('ログアウト') }}
                     </x-responsive-nav-link>
                 </form>
             </div>

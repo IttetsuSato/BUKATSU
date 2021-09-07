@@ -54,6 +54,26 @@ class User extends Authenticatable
       return $this->belongsTo('App\Models\City');
     }
 
+    public function updateProfile(Array $params)
+    {
+        if (isset($params['image'])) {
+            $file_name = $params['image']->store('public/image/');
+
+            $this::where('id', $this->id)
+                ->update([
+                  'name' => $params['name'],
+                  'image' => basename($file_name),
+                ]);
+        } else {
+            $this::where('id', $this->id)
+                ->update([
+                  'image' => '',
+                ]); 
+        }
+
+        return;
+    }
+
     public static function getUsers()
     {
       $users = self::orderBy('attribute', 'asc')->get();

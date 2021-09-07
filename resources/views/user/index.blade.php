@@ -30,7 +30,14 @@
                 <td class="py-4 px-6 border-b border-grey-light">
                   <a href="{{ route('user.show', $user->id) }}">{{$user->name}}</a>
                 </td>
-                <td class="py-4 px-6 border-b border-grey-light">{{$user->image}}</td>
+
+                <td class="py-4 px-6 border-b border-grey-light">
+                  @if($user->image)
+                  <img src="{{ asset('storage/image/' .$user->image) }}" width="200" alt="image">
+                  @else
+                  <i class="text-2xl fas fa-image"></i>
+                  @endif
+                </td>
                 {{-- 管理者用項目 --}}
                 @auth
                 @if(Auth::user()->attribute === 'administrator')

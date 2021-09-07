@@ -88,6 +88,7 @@ class UserController extends Controller
       //バリデーション
       $validator = Validator::make($request->all(), [
         'name' => 'required | max:191',
+        'image' => 'file | image | mimes:jpeg,png,jpg | max:2048',
       ]);
       //バリデーション:エラー
       if ($validator->fails()) {
@@ -98,7 +99,7 @@ class UserController extends Controller
       }
       //データ更新処理
       // updateは更新する情報がなくても更新が走る（updated_atが更新される）
-      $result = User::find($id)->update($request->all());
+      User::find($id)->updateProfile($request->all());
       return redirect()->route('user.index');
     }
 

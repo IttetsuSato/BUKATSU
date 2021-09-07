@@ -14,6 +14,7 @@
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
         <!-- Scripts -->
+        <script src="https://kit.fontawesome.com/137e363532.js" crossorigin="anonymous"></script>
         <script src="{{ asset('js/app.js') }}" defer></script>
     </head>
     <body class="bukatsu-font antialiased">

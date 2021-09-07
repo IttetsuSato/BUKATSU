@@ -16,8 +16,35 @@ $theme-font: "Helvetica Neue",
               Meiryo,
               sans-serif;
 
-.bukatsu-blue{
+.bukatsu-text-blue{
   color: $theme-blue;
+}
+.bukatsu-bg-blue{
+  background-color: $theme-blue;
+}
+.bukatsu-text-skyblue{
+  color: $theme-blue;
+}
+.bukatsu-bg-skyblue{
+  background-color: $theme-skyblue;
+}
+.bukatsu-text-yellow{
+  color: $theme-yellow;
+}
+.bukatsu-bg-yellow{
+  background-color: $theme-yellow;
+}
+.bukatsu-text-red{
+  color: $theme-red;
+}
+.bukatsu-bg-red{
+  background-color: $theme-red;
+}
+.bukatsu-text-white{
+  color: $theme-white;
+}
+.bukatsu-bg-white{
+  background-color: $theme-white;
 }
 .bukatsu-font{
   font-family: $theme-font;
@@ -45,10 +72,8 @@ $theme-font: "Helvetica Neue",
     background-color: $theme-yellow;
   }
 }
-.bukatsu-section1{
-  background-color: $theme-skyblue;
-}
 
+//登録セクション
 .bukatsu-register-button{
   font-size: 1.125rem;
   line-height: 1.75rem;
@@ -72,20 +97,32 @@ $theme-font: "Helvetica Neue",
       color: $theme-white;
     }
   }
-  &.school{
-    label{
-      color: $theme-yellow;
-    }
-    button{
-      background-color: $theme-yellow;
-    }
+}
+
+// 特徴セクション
+.bukatsu-feature{
+  border: 4px solid $theme-darkblue;
+  border-radius: 34px;
+  background-color: $theme-white;
+  color:$theme-blue;
+  padding: 30px 15px;
+  width: 300px;
+  height: 380px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.no-scroll-bar{
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar{
+    display: none;
   }
-  &.civilian{
-    label{
-      color: $theme-red;
-    }
-    button{
-      background-color: $theme-red;
-    }
-  }
+}
+.bukatsu-button{
+  width: 368px;
+  border-radius: 13px;
+  padding: 0.8rem;
 }

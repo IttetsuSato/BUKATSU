@@ -1,8 +1,44 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-.bukatsu-blue {
+.bukatsu-text-blue {
   color: #3070B5;
+}
+
+.bukatsu-bg-blue {
+  background-color: #3070B5;
+}
+
+.bukatsu-text-skyblue {
+  color: #3070B5;
+}
+
+.bukatsu-bg-skyblue {
+  background-color: #F8FBFD;
+}
+
+.bukatsu-text-yellow {
+  color: #F8D256;
+}
+
+.bukatsu-bg-yellow {
+  background-color: #F8D256;
+}
+
+.bukatsu-text-red {
+  color: #EC5A47;
+}
+
+.bukatsu-bg-red {
+  background-color: #EC5A47;
+}
+
+.bukatsu-text-white {
+  color: #FFFFFF;
+}
+
+.bukatsu-bg-white {
+  background-color: #FFFFFF;
 }
 
 .bukatsu-font {
@@ -33,10 +69,6 @@
   background-color: #F8D256;
 }
 
-.bukatsu-section1 {
-  background-color: #F8FBFD;
-}
-
 .bukatsu-register-button {
   font-size: 1.125rem;
   line-height: 1.75rem;
@@ -61,17 +93,34 @@
   font-weight: bold;
   color: #FFFFFF;
 }
-.bukatsu-register-button.school label {
-  color: #F8D256;
+
+.bukatsu-feature {
+  border: 4px solid #416FB0;
+  border-radius: 34px;
+  background-color: #FFFFFF;
+  color: #3070B5;
+  padding: 30px 15px;
+  width: 300px;
+  height: 380px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
 }
-.bukatsu-register-button.school button {
-  background-color: #F8D256;
+
+.no-scroll-bar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
-.bukatsu-register-button.civilian label {
-  color: #EC5A47;
+.no-scroll-bar::-webkit-scrollbar {
+  display: none;
 }
-.bukatsu-register-button.civilian button {
-  background-color: #EC5A47;
+
+.bukatsu-button {
+  width: 368px;
+  border-radius: 13px;
+  padding: 0.8rem;
 }
 /*! tailwindcss v2.2.9 | MIT License | https://tailwindcss.com */
 

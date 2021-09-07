@@ -13,13 +13,12 @@
         <div class="text-center">
           <p class="bukatsu-text-blue font-extrabold text-lg">BUKATSUは<br>部活と地域のスポーツ指導したい人を<br>つなぐアプリです</p>
         </div>
-        <div class="flex justify-evenly mt-4">
+        <div class="flex justify-evenly my-4">
           <div class="bukatsu-register-button">
             <label class="bukatsu-text-yellow">学校</label>
             <button class="bukatsu-bg-yellow">
               <a href="{{ route('registerSchool') }}">新規登録</a>
             </button>
-
           </div>
           <div class="bukatsu-register-button">
             <label class="bukatsu-text-red">指導者</label>
@@ -27,6 +26,9 @@
               <a href="{{ route('register') }}">新規登録</a>
             </button>
           </div>
+        </div>
+        <div class="mt-4">
+          <img class="text-center mx-auto" src="{{ asset('storage/default_image/two_mens.png') }}" width="220" alt="image">
         </div>
       </div>
 
@@ -38,7 +40,7 @@
         <div class="sm:px-6 lg:px-8 py-10">
           <div class="text-center">
             <div class="mb-8 mx-auto">
-              <h2 class="bukatsu-text-white text-2xl font-bold">特徴</h2>
+              <h2 class="bukatsu-text-white text-3xl font-bold tracking-wider">特徴</h2>
             </div>
             <div class="px-8 my-8">
               <div class="flex justify-evenly overflow-x-auto no-scroll-bar">
@@ -60,12 +62,16 @@
               </div>
             </div>
             <div class="flex flex-wrap justify-evenly">
-              <button class="bukatsu-search-button bukatsu-bg-blue m-3">
-                <a href="{{ route('area.search') }}" class="font-extrabold text-lg">地域から探す</a>
-              </button>
-              <button class="bukatsu-search-button bukatsu-bg-blue m-3">
-                <a href="{{ route('club.search') }}" class="font-extrabold text-lg">種目から探す</a>
-              </button>
+              <a href="{{ route('area.search') }}" class="font-extrabold text-lg">
+                <button class="bukatsu-search-button bukatsu-bg-blue m-3 font-extrabold text-lg">
+                  地域から探す
+                </button>
+              </a>
+              <a href="{{ route('club.search') }}" class="font-extrabold text-lg">
+                <button class="bukatsu-search-button bukatsu-bg-blue m-3 font-extrabold text-lg">
+                  種目から探す
+                </button>
+              </a>
             </div>
           </div>
         </div>
@@ -73,10 +79,10 @@
   </section>
   
   <section class="bukatsu-bg-red">
-    <div class="sm:px-6 lg:px-8 py-10">
+    <div class="px-4 sm:px-6 lg:px-8 py-10">
       <div class="text-center">
         <div class="mb-8 mx-auto">
-          <h2 class="bukatsu-text-white text-2xl font-bold">NEWS</h2>
+          <h2 class="bukatsu-text-white text-3xl font-bold tracking-wide">NEWS</h2>
         </div>
       </div>
       <div class="my-8">

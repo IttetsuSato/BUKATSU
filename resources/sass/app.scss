@@ -10,9 +10,7 @@ $theme-gray: #707070;
 $theme-white: #FFFFFF;
 $theme-red: #EC5A47;
 $theme-yellow: #F8D256;
-$theme-font: "Helvetica Neue",
-              "Hiragino Kaku Gothic ProN",
-              "Hiragino Sans",
+$theme-font: "Hiragino Sans",
               Meiryo,
               sans-serif;
 
@@ -82,7 +80,7 @@ $theme-font: "Helvetica Neue",
   label{
     display: block;
     width: 100%;
-    margin: 10px auto;
+    margin: 8px auto;
   }
   button{
     -webkit-appearance: none;
@@ -90,7 +88,7 @@ $theme-font: "Helvetica Neue",
           appearance: none;
           border: 0;
     border-radius: 9999px;
-    padding: 0.8rem 3.5rem;
+    padding: 0.8rem 3.2rem;
     a{
       text-decoration: none;
       font-weight: bold;
@@ -125,7 +123,7 @@ $theme-font: "Helvetica Neue",
   box-sizing: border-box;
   background-color: $theme-blue;
   color:$theme-white;
-  width: 368px;
+  width: 340px;
   height: 55px;
   border-radius: 13px;
   padding: 0.8rem;

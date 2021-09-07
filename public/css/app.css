@@ -42,7 +42,7 @@
 }
 
 .bukatsu-font {
-  font-family: "Helvetica Neue", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-family: "Hiragino Sans", Meiryo, sans-serif;
 }
 
 .bukatsu-navigation {
@@ -86,7 +86,7 @@
   appearance: none;
   border: 0;
   border-radius: 9999px;
-  padding: 0.8rem 3.5rem;
+  padding: 0.8rem 3.2rem;
 }
 .bukatsu-register-button button a {
   text-decoration: none;
@@ -121,13 +121,14 @@
   box-sizing: border-box;
   background-color: #3070B5;
   color: #FFFFFF;
-  width: 368px;
+  width: 340px;
   height: 55px;
   border-radius: 13px;
   padding: 0.8rem;
   transition: 0.2s;
 }
 .bukatsu-search-button:hover {
+  padding: 0.7rem;
   border: solid 4px #416FB0;
   background-color: #FFFFFF;
   color: #3070B5;

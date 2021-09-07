@@ -5,9 +5,9 @@
             <div class="flex">
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
-                    <a href="{{ route('top') }}">
-                        <x-application-logo class="block h-10 w-auto fill-current text-white" />
-                    </a>
+                  <a href="{{route('top')}}">
+                    <img src="{{ asset('storage/default_image/logo.png') }}" width="200" alt="image">
+                  </a>
                 </div>
 
                 @auth

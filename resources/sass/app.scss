@@ -121,8 +121,19 @@ $theme-font: "Helvetica Neue",
     display: none;
   }
 }
-.bukatsu-button{
+.bukatsu-search-button{
+  box-sizing: border-box;
+  background-color: $theme-blue;
+  color:$theme-white;
   width: 368px;
+  height: 55px;
   border-radius: 13px;
   padding: 0.8rem;
+  transition: 0.2s;
+  &:hover{
+    padding: 0.7rem;
+    border: solid 4px $theme-darkblue;
+    background-color: $theme-white;
+    color: $theme-blue;
+  }
 }

@@ -117,10 +117,20 @@
   display: none;
 }
 
-.bukatsu-button {
+.bukatsu-search-button {
+  box-sizing: border-box;
+  background-color: #3070B5;
+  color: #FFFFFF;
   width: 368px;
+  height: 55px;
   border-radius: 13px;
   padding: 0.8rem;
+  transition: 0.2s;
+}
+.bukatsu-search-button:hover {
+  border: solid 4px #416FB0;
+  background-color: #FFFFFF;
+  color: #3070B5;
 }
 /*! tailwindcss v2.2.9 | MIT License | https://tailwindcss.com */
 

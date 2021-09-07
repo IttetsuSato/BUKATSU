@@ -49,22 +49,22 @@ class User extends Authenticatable
       return $this->belongsToMany('App\Models\Club')->withTimestamps();
     }
 
+    public function city()
+    {
+      return $this->belongsTo('App\Models\City');
+    }
+
     public static function getUsers()
     {
       $users = self::orderBy('attribute', 'asc')->get();
       return $users;
     }
 
-    public static function getUsersGroupedByDate($count)
+    public static function getNews($count)
     {
-      $users = self::orderBy('created_at', 'desc')->get();
-      $converted = $users->map(function ($user) {
-        return array(
-          'date' => $user->created_at->format('Y.m.d'),
-          'user' => $user->all(),
-        );
-      });
-      $news = $converted->groupBy('date')->take($count);
+      $news = self::orderBy('created_at', 'desc')
+      ->take($count)
+      ->get();
 
         return $news;
     }

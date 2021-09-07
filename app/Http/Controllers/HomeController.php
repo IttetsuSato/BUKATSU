@@ -9,7 +9,7 @@ class HomeController extends Controller
 {
   public function index()
   {
-    $news = User::getUsersGroupedBydate(4);
+    $news = User::getNews(4);
     return view('index',compact('news'));
   }
 }

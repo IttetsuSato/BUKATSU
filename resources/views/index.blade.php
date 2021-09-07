@@ -60,11 +60,11 @@
               </div>
             </div>
             <div class="flex flex-wrap justify-evenly">
-              <button class="bukatsu-button bukatsu-bg-blue m-3">
-                <a href="{{ route('area.search') }}" class="bukatsu-text-white font-extrabold text-lg">地域から探す</a>
+              <button class="bukatsu-search-button bukatsu-bg-blue m-3">
+                <a href="{{ route('area.search') }}" class="font-extrabold text-lg">地域から探す</a>
               </button>
-              <button class="bukatsu-button bukatsu-bg-blue m-3">
-                <a href="{{ route('club.search') }}" class="bukatsu-text-white font-extrabold text-lg">種目から探す</a>
+              <button class="bukatsu-search-button bukatsu-bg-blue m-3">
+                <a href="{{ route('club.search') }}" class="font-extrabold text-lg">種目から探す</a>
               </button>
             </div>
           </div>
@@ -72,9 +72,39 @@
 
   </section>
   
-  <section>
-    @foreach($news as $new)
-    
-    @endforeach
+  <section class="bukatsu-bg-red">
+    <div class="sm:px-6 lg:px-8 py-10">
+      <div class="text-center">
+        <div class="mb-8 mx-auto">
+          <h2 class="bukatsu-text-white text-2xl font-bold">NEWS</h2>
+        </div>
+      </div>
+      <div class="my-8">
+        @foreach($news as $new)
+        <div>
+          <div>
+            {{ $new->image }}
+          </div>
+          <div>
+            <p class="bukatsu-text-white">{{ $new->created_at->format('Y.m.d') }}</p>
+          </div>
+          <div class="text-lg font-bold">
+            @if($new->attribute === 'school')
+            <p class="bukatsu-text-white">
+              {{ $new->name }}が仲間入りしました
+            </p>
+            @endif
+            @if($new->attribute === 'civilian')
+              @foreach($new->clubs as $club)
+                <p class="bukatsu-text-white">
+                  {{ $new->city->name }}で{{ $club->name }}が指導できるようになりました
+                </p>
+              @endforeach
+            @endif
+          </div>
+        </div>
+        @endforeach
+      </div>
+    </div>
   </section>
 </x-app-layout>

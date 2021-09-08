@@ -10,7 +10,7 @@
       <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
         <div class="p-6 bg-white border-b border-gray-200">
           @include('common.errors')
-          <form class="mb-6" action="{{ route('club.update',$club->id) }}" method="POST">
+          <form class="mb-6" action="{{ route('club.update',$club->id) }}" method="POST" enctype="multipart/form-data">
             @method('put')
             @csrf
             <div class="flex flex-col mb-4">
@@ -19,7 +19,12 @@
             </div>
             <div class="flex flex-col mb-4">
               <label class="mb-2 uppercase font-bold text-lg text-grey-darkest" for="image">イメージ</label>
-              <input class="border py-2 px-3 text-grey-darkest" type="text" name="image" id="image" value="{{$club->image}}">
+              @if($club->image)
+              <img src="{{ asset('storage/image/' .$club->image) }}" width="300" alt="image">
+              @else
+              <img src="{{ asset('storage/default_image/sport.jpg') }}" width="300" alt="image">
+              @endif
+              <input type="file" name="image" class="border py-2 px-3 text-grey-darkest" autocomplete="image">
             </div>
             <div class="flex flex-col mb-4">
               <label class="mb-2 uppercase font-bold text-lg text-grey-darkest" for="attribute">属性</label>

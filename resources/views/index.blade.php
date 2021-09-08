@@ -11,7 +11,7 @@
     <section class="bukatsu-bg-skyblue">
       <div class="sm:px-6 lg:px-8 pt-10">
         <div class="text-center">
-          <p class="bukatsu-text-blue font-extrabold text-lg">BUKATSUは<br>部活と地域のスポーツ指導したい人を<br>つなぐアプリです</p>
+          <p class="bukatsu-text-blue font-extrabold text-lg md:text-xl">BUKATSUは<br>部活と地域のスポーツ指導したい人を<br>つなぐアプリです</p>
         </div>
         <div class="flex justify-evenly my-4">
           <div class="bukatsu-register-button">
@@ -85,26 +85,41 @@
           <h2 class="bukatsu-text-white text-3xl font-bold tracking-wide">NEWS</h2>
         </div>
       </div>
-      <div class="my-8">
+      <div class="my-8 grid grid-flow-col grid-cols-1 grid-rows-4 md:grid-cols-2 md:grid-rows-2">
         @foreach($news as $new)
         <div>
-          <div>
-            {{ $new->image }}
-          </div>
-          <div>
-            <p class="bukatsu-text-white">{{ $new->created_at->format('Y.m.d') }}</p>
-          </div>
-          <div class="text-lg font-bold">
+          <div class="my-3 md:mx-4 md:p-6">
             @if($new->attribute === 'school')
-            <p class="bukatsu-text-white">
-              {{ $new->name }}が仲間入りしました
-            </p>
+              <div>
+                @if($new->image)
+                  <img class="rounded-lg" src="{{ asset('storage/image'. $new->image) }}" alt="image">
+                @else
+                  <img class="rounded-lg" src="{{ asset('storage/default_image/school.jpg') }}" alt="image">
+                @endif
+
+              </div>
+              <div class="p-2">
+                <p class="bukatsu-text-white my-2">{{ $new->created_at->format('Y.m.d') }}</p>
+                <p class="bukatsu-text-white font-bold text-lg">
+                  {{ $new->name }}が仲間入りしました
+                </p>
+              </div>
             @endif
             @if($new->attribute === 'civilian')
               @foreach($new->clubs as $club)
-                <p class="bukatsu-text-white">
-                  {{ $new->city->name }}で{{ $club->name }}が指導できるようになりました
-                </p>
+                <div>
+                  @if($club->image)
+                    <img class="rounded-lg" src="{{ asset('storage/image'. $club->image) }}" alt="image">
+                  @else
+                    <img class="rounded-lg" src="{{ asset('storage/default_image/sport.jpg') }}" alt="image">
+                  @endif
+                </div>
+                <div class="p-2">
+                  <p class="bukatsu-text-white my-2">{{ $new->created_at->format('Y.m.d') }}</p>
+                  <p class="bukatsu-text-white font-bold text-lg">
+                    {{ $new->city->name }}で{{ $club->name }}が指導できるようになりました
+                  </p>
+                </div>
               @endforeach
             @endif
           </div>

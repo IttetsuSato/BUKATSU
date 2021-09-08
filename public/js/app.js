@@ -3804,11 +3804,27 @@ __webpack_require__(/*! alpinejs */ "./node_modules/alpinejs/dist/alpine.js"); /
 
 
 var areaSelect = document.getElementById('area');
-areaSelect.addEventListener('change', function (e) {
-  var area_id = e.target.value;
-  var displayCityOptions = document.getElementById('citiesGroup' + area_id);
-  displayCityOptions.className = 'block';
-});
+
+if (areaSelect) {
+  areaSelect.addEventListener('change', function (e) {
+    var area_id = e.target.value;
+    var displayCityOptions = document.getElementById('citiesGroup' + area_id);
+    displayCityOptions.className = 'block';
+  });
+} // エリア選択のドロップダウン(area.blade.php)
+
+
+var areaTitles = document.querySelectorAll('.bukatsu-area');
+
+if (areaTitles) {
+  areaTitles.forEach(function (element) {
+    var button = element.querySelector('.bukatsu-area-title');
+    var dropdown = element.querySelector('.bukatsu-cities');
+    button.addEventListener('click', function () {
+      dropdown.classList.toggle('hidden');
+    });
+  });
+}
 
 /***/ }),
 

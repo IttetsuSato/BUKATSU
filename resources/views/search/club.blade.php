@@ -6,20 +6,23 @@
   </x-slot>
 
   <section>
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 bg-white border-b border-gray-200">
-                  <ul>
-                    @foreach($clubs as $club)
-                    <li  class="border-b border-gray-600">
-                      <a href="{{ route('user.club', $club->id) }}">{{ $club->name }}</a>
-                    </li>
-                    @endforeach
-                  </ul>
+    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 sm:py-10">
+      <div class="bg-white overflow-hidden">
+          <div class="bg-white border border-gray-200">
+            <ul>
+              @foreach($clubs as $club)
+              <li class="bukatsu-area">
+                <div class="bukatsu-area-title border-b-2 border-gray-400 py-4 px-6 bukatsu-text-blue text-xl font-bold hover:bg-gray-100">
+                  <a class="flex justify-between items-center " href="{{ route('user.club', $club->id) }}">
+                    <div> {{$club->name}}</div>
+                    <i class="fas fa-chevron-right"></i>
+                  </a>
                 </div>
-            </div>
-        </div>
+              </li>
+              @endforeach
+            </ul>
+          </div>
+      </div>
     </div>
 
   </section>

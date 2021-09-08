@@ -14,7 +14,6 @@
 
                   {{-- 管理者用リンク --}}
                   @if(Auth::user()->attribute === 'administrator')
-
                   <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('club.index')" :active="request()->routeIs('club.index')">
                       {{ __('部活一覧') }}
@@ -49,6 +48,17 @@
                       </x-slot>
     
                       <x-slot name="content">
+                        <!-- トップボタン -->
+                        <form action="{{ route('top', Auth::user()->id) }}" method="GET">
+                          @csrf
+                          
+                          <x-dropdown-link :href="route('top')"
+                            onclick="event.preventDefault();
+                                                this.closest('form').submit();">
+                            <i class="mr-2 fas fa-undo"></i>
+                            {{ __('トップページ') }}
+                          </x-dropdown-link>
+                        </form>
                         <!-- 更新ボタン -->
                         <form action="{{ route('user.edit', Auth::user()->id) }}" method="GET">
                           @csrf
@@ -74,10 +84,10 @@
                       </x-slot>
                   </x-dropdown>
               @else
-                  <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">ログイン</a>
+                  <a href="{{ route('login') }}" class="text-md hover:underline">ログイン</a>
 
                   @if (Route::has('register'))
-                      <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">新規登録</a>
+                      <a href="{{ route('register') }}" class="ml-6 text-md hover:underline">新規登録</a>
                   @endif
               @endauth
             </div>
@@ -97,10 +107,27 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
 
-      @auth
+      {{-- ログインしててもしなくても常に表示 --}}
+      <div class="mt-3 space-y-1">
+        <!-- トップボタン -->
+        <form action="{{ route('top') }}" method="GET">
+          @csrf
+          
+          <x-responsive-nav-link :href="route('top')"
+            onclick="event.preventDefault();
+                                this.closest('form').submit();">
+            <i class="mr-2 fas fa-undo"></i>
+            {{ __('トップページ') }}
+          </x-responsive-nav-link>
+        </form>
+      </div>
 
+      @auth
         {{-- 管理者用リンク --}}
         @if(Auth::user()->attribute === 'administrator')
+        <div class="p-2 border-b space-y-1">
+          <p class="font-semibold">管理者用メニュー<p>
+        </div>
         <div class="pt-2 pb-3 space-y-1">
           <x-responsive-nav-link :href="route('club.index')" :active="request()->routeIs('club.index')">
             {{ __('部活一覧') }}
@@ -147,15 +174,19 @@
             </div>
         </div>
 
+
+      {{-- 非ログイン時限定 --}}
       @else
         <div class="pt-2 pb-3 space-y-1">
           <x-responsive-nav-link :href="route('login')" :active="request()->routeIs('login')">
+            <i class="mr-2 fas fa-sign-in-alt"></i>
             {{ __('ログイン') }}
           </x-responsive-nav-link>
         </div>
 
         @if (Route::has('register'))
           <x-responsive-nav-link :href="route('register')" :active="request()->routeIs('register')">
+            <i class="mr-2 fas fa-user-plus"></i>
             {{ __('新規登録') }}
           </x-responsive-nav-link>
         @endif

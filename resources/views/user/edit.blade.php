@@ -1,7 +1,7 @@
 <x-app-layout>
   <x-slot name="header">
-    <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-      {{ __('Edit User') }}
+    <h2 class="font-semibold text-lg bukatsu-text-darkblue leading-tight">
+      {{ __('プロフィール') }}
     </h2>
   </x-slot>
 
@@ -43,11 +43,11 @@
               </select>
             </div> --}}
             <div class="flex justify-evenly">
-              <a href="{{ route('user.index') }}" class="block text-center w-5/12 py-3 mt-6 font-medium tracking-widest text-black uppercase bg-gray-100 shadow-sm focus:outline-none hover:bg-gray-200 hover:shadow-none">
-                Back
+              <a href="{{ route('top') }}" class="block text-center w-5/12 py-3 mt-6 font-medium tracking-widest text-black uppercase bg-gray-100 shadow-sm focus:outline-none hover:bg-gray-200 hover:shadow-none">
+                戻る
               </a>
               <button type="submit" class="w-5/12 py-3 mt-6 font-medium tracking-widest text-white uppercase bg-black shadow-lg focus:outline-none hover:bg-gray-900 hover:shadow-none">
-                Update
+                更新
               </button>
             </div>
           </form>

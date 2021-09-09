@@ -1,7 +1,7 @@
 <x-app-layout>
   <x-slot name="header">
-    <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-      {{ __('User Index') }}
+    <h2 class="font-semibold text-lg bukatsu-text-darkblue leading-tight">
+      {{ __('登録者一覧') }}
     </h2>
   </x-slot>
 

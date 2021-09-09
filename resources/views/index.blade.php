@@ -1,6 +1,6 @@
 <x-app-layout>
   <x-slot name="header">
-      <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+      <h2 class="font-semibold text-lg bukatsu-text-darkblue leading-tight">
           {{ __('トップページ') }}
       </h2>
   </x-slot>
@@ -11,7 +11,7 @@
     <section class="bukatsu-bg-skyblue">
       <div class="sm:px-6 lg:px-8 pt-10">
         <div class="text-center">
-          <p class="bukatsu-text-blue font-extrabold text-lg md:text-xl">BUKATSUは<br>部活と地域のスポーツ指導したい人を<br>つなぐアプリです</p>
+          <p class="bukatsu-text-blue font-extrabold text-lg md:text-2xl">BUKATSUは<br>部活と地域のスポーツ指導したい人を<br>つなぐアプリです</p>
         </div>
         <div class="flex justify-evenly my-4">
           <div class="bukatsu-register-button">
@@ -27,8 +27,8 @@
             </button>
           </div>
         </div>
-        <div class="mt-4">
-          <img class="text-center mx-auto" src="{{ asset('storage/default_image/two_mens.png') }}" width="220" alt="image">
+        <div class="mt-4 px-16 max-w-sm mx-auto">
+          <img class="text-center mx-auto" src="{{ asset('storage/default_image/two_mens.png') }}" alt="image">
         </div>
       </div>
 

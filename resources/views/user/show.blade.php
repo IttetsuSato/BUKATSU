@@ -8,7 +8,7 @@
   <div class="py-12">
     <div class="max-w-7xl mx-auto sm:w-8/12 md:w-1/2 lg:w-5/12">
       <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-        <div class="p-6 bg-white border-b border-gray-200">
+        <div class="p-6 bg-white">
           <div class="mb-6">
             <div class="flex flex-col mb-4">
               <p class="mb-2 uppercase font-bold text-lg text-grey-darkest">名前</p>
@@ -28,7 +28,7 @@
                 {{$user->profile}}
               </p>
             </div>
-            <a href="{{ route('user.index') }}" class="block text-center w-full py-3 mt-6 font-medium tracking-widest text-white uppercase bg-black shadow-lg focus:outline-none hover:bg-gray-900 hover:shadow-none">
+            <a href="#" onclick="history.back(-1);return false;" class="block text-center w-full py-3 mt-6 font-medium tracking-widest text-white uppercase bg-black shadow-lg focus:outline-none hover:bg-gray-900 hover:shadow-none">
               Back
             </a>
           </div>

@@ -4,74 +4,77 @@
       {{ __('登録者一覧') }}
     </h2>
   </x-slot>
-
-  <div class="py-12">
-    <div class="max-w-7xl mx-auto sm:w-10/12 md:w-8/10 lg:w-8/12">
-      <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-        <div class="p-6 bg-white border-b border-gray-200">
-          <table class="text-center w-full border-collapse">
-            <thead>
-              <tr>
-                <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-lg text-grey-dark border-b border-grey-light">名前</th>
-                <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-lg text-grey-dark border-b border-grey-light">イメージ</th>
-                {{-- 管理者用項目 --}}
-                @auth
-                @if(Auth::user()->attribute === 'administrator')
-                <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-lg text-grey-dark border-b border-grey-light">属性</th>
-                <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-lg text-grey-dark border-b border-grey-light">操作</th>
-                @endif
-                @endauth
-                {{-- ここまで管理者用項目 --}}
-              </tr>
-            </thead>
-            <tbody>
-              @foreach ($users as $user)
-              <tr class="hover:bg-grey-lighter">
-                <td class="py-4 px-6 border-b border-grey-light">
-                  <a href="{{ route('user.show', $user->id) }}">{{$user->name}}</a>
-                </td>
-
-                <td class="py-4 px-6 border-b border-grey-light">
-                  @if($user->image)
-                  <img src="{{ asset('storage/image/' .$user->image) }}" width="200" alt="image">
-                  @else
-                  <i class="text-2xl fas fa-image"></i>
-                  @endif
-                </td>
-                {{-- 管理者用項目 --}}
-                @auth
-                @if(Auth::user()->attribute === 'administrator')
-                  <td class="py-4 px-6 border-b border-grey-light">{{$user->attribute}}</td>
-                  <td class="py-4 px-6 border-b border-grey-light flex justify-center">
-                    <!-- 更新ボタン -->
-                    <form action="{{ route('user.edit',$user->id) }}" method="GET">
-                      @csrf
-                      <button type="submit" class="mr-2 ml-2 text-sm bg-black hover:bg-gray-900 hover:shadow-none text-white py-1 px-2 focus:outline-none focus:shadow-outline">
-                        <svg class="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="white">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
-                        </svg>
-                      </button>
-                    </form>
-                    <!-- 削除ボタン -->
-                    <form action="{{ route('user.destroy',$user->id) }}" method="POST">
-                      @method('delete')
-                      @csrf
-                      <button type="submit" class="mr-2 ml-2 text-sm bg-black hover:bg-gray-900 hover:shadow-none text-white py-1 px-2 focus:outline-none focus:shadow-outline">
-                        <svg class="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="white">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                        </svg>
-                      </button>
-                    </form>
-                  </td>
-                @endif
-                @endauth
-                {{-- ここまで管理者用項目 --}}
-              </tr>
+  
+  
+  <div class="w-full bg-white overflow-hidden shadow-sm sm:rounded-lg">
+    <div class="px-4 px-6 lg:px-8 bg-white border-b border-gray-200">
+      <div class="flex justify-center flex-wrap">
+        @if($users->isEmpty())
+          <div class="w-full md:w-5/12 py-4 px-6 my-8 mx-4 border border-gray shadow">
+            <div class="h-44 flex flex-col justify-center items-center">
+              <p class="font-bold text-xl text-gray-600">条件に該当する登録者がいません</p>
+              <a href="#" onclick="history.back(-1);return false;" class="block text-center w-1/2 py-3 mt-6 font-medium tracking-widest text-white uppercase bukatsu-bg-blue">
+                戻る
+              </a>
+            </div>
+          <div>
+        @else
+        @foreach ($users as $user)
+        <div class="w-full md:w-5/12 py-4 px-6 my-2 sm:mx-4 border border-gray shadow">
+          <div class="flex">
+            <div class="w-4/12 flex flex-col items-center justify-between mr-5">
+              @if($user->image)
+                      <img class="w-full" src="{{ asset('storage/image/' .$user->image) }}" alt="image">
+                      @else
+                      <i class="text-2xl fas fa-image"></i>
+                      @endif
+                    </div>
+                    <div class="w-8/12">
+                      <div class="p-2">
+                        <p class="font-bold text-lg">{{$user->name}}</p>
+                        {{-- 管理者用項目 --}}
+                        @auth
+                        @if(Auth::user()->attribute === 'administrator')
+                        <div class="flex justify-between items-center">
+                          <p class="text-gray-400">{{$user->attribute}}</p>
+                          <div class="flex justify-center">
+                            <!-- 更新ボタン -->
+                            <form action="{{ route('user.edit',$user->id) }}" method="GET">
+                              @csrf
+                              <button type="submit" class="mr-2 ml-2 text-md bukatsu-text-blue">
+                                <i class="fas fa-edit"></i>
+                              </button>
+                            </form>
+                            <!-- 削除ボタン -->
+                            <form action="{{ route('user.destroy',$user->id) }}" method="POST">
+                              @method('delete')
+                              @csrf
+                              <button type="submit" class="mr-2 ml-2 text-md bukatsu-text-red">
+                                <i class="fas fa-trash-alt"></i>
+                              </button>
+                            </form>
+                          </div>
+                        </div>
+                        @endif
+                        @endauth
+                        {{-- ここまで管理者用項目 --}}
+                      </div>
+                      <div class="p-2 h-28">
+                        <p class="text-md">{{$user->profile}}</p>
+                      </div>
+                      <div class="flex justify-end">
+                        <a href="{{ route('user.show', $user->id) }}">
+                          <x-button>
+                            {{ __('詳細') }}
+                          </x-button>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               @endforeach
-            </tbody>
-          </table>
+            @endif
+          </div>
         </div>
       </div>
-    </div>
-  </div>
 </x-app-layout>

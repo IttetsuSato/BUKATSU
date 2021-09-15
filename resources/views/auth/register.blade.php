@@ -227,7 +227,7 @@
           <x-button class="my-6 bukatsu-bg-red">
               {{ __('送信') }}
           </x-button>
-            <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
+            <a class="underline hover:underline bukatsu-text-blue" href="{{ route('login') }}">
                 {{ __('会員登録済みの方はこちら') }}
             </a>
 

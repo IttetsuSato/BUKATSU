@@ -6,8 +6,7 @@
   </x-slot>
   
   
-  <div class="w-full bg-white overflow-hidden shadow-sm sm:rounded-lg">
-    <div class="px-4 px-6 lg:px-8 bg-white border-b border-gray-200">
+    <div class="w-full bukatsu-bg-skyblue py-6 px-4 md:px-6 lg:px-8">
       <div class="flex justify-center flex-wrap">
         @if($users->isEmpty())
           <div class="w-full md:w-5/12 py-4 px-6 my-8 mx-4 border border-gray shadow">
@@ -20,21 +19,31 @@
           <div>
         @else
         @foreach ($users as $user)
-        <div class="w-full md:w-5/12 py-4 px-6 my-2 sm:mx-4 border border-gray shadow">
+        <div class="w-full md:w-5/12 py-4 px-6 my-2 sm:mx-4 border border-gray shadow-lg bukatsu-bg-white rounded-sm">
           <div class="flex">
-            <div class="w-4/12 flex flex-col items-center justify-between mr-5">
+            <div class="w-5/12 flex flex-col items-center justify-between mr-5">
               @if($user->image)
-                      <img class="w-full" src="{{ asset('storage/image/' .$user->image) }}" alt="image">
-                      @else
-                      <i class="text-2xl fas fa-image"></i>
-                      @endif
-                    </div>
-                    <div class="w-8/12">
-                      <div class="p-2">
-                        <p class="font-bold text-lg">{{$user->name}}</p>
-                        {{-- 管理者用項目 --}}
-                        @auth
-                        @if(Auth::user()->attribute === 'administrator')
+                <img class="w-full" src="{{ asset('storage/image/' .$user->image) }}" alt="image">
+              @else
+                <i class="text-2xl mt-6 fas fa-image"></i>
+              @endif
+            </div>
+                <div class="w-7/12">
+                  <div class="p-2">
+                    <p class="font-bold text-lg">{{$user->name}}</p>
+                    @if($user->city_id)
+                      <p class="mt-2 text-sm"><i class="bukatsu-text-darkblue fas fa-map-pin"></i> {{$user->city->name}}</p>
+                    @endif
+                    <p class="mt-2 text-sm">
+                      <i class="bukatsu-text-darkblue fas fa-running"></i> 
+                      @foreach($user->clubs as $club)
+                        {{$club->name}}<br>
+                      @endforeach
+                    </p>
+
+                    {{-- 管理者用項目 --}}
+                    @auth
+                      @if(Auth::user()->attribute === 'administrator')
                         <div class="flex justify-between items-center">
                           <p class="text-gray-400">{{$user->attribute}}</p>
                           <div class="flex justify-center">
@@ -55,26 +64,25 @@
                             </form>
                           </div>
                         </div>
-                        @endif
-                        @endauth
-                        {{-- ここまで管理者用項目 --}}
-                      </div>
-                      <div class="p-2 h-28">
-                        <p class="text-md">{{$user->profile}}</p>
-                      </div>
-                      <div class="flex justify-end">
-                        <a href="{{ route('user.show', $user->id) }}">
-                          <x-button>
-                            {{ __('詳細') }}
-                          </x-button>
-                        </a>
-                      </div>
-                    </div>
+                      @endif
+                    @endauth
+                    {{-- ここまで管理者用項目 --}}
+                  </div>
+                  <div class="p-2 sm:my-2 h-20 overflow-hidden">
+                    <p class="text-md">{{$user->profile}}</p>
+                  </div>
+                  <div class="flex justify-end">
+                    <a href="{{ route('user.show', $user->id) }}">
+                      <x-button>
+                        {{ __('詳細') }}
+                      </x-button>
+                    </a>
                   </div>
                 </div>
-              @endforeach
-            @endif
-          </div>
-        </div>
+              </div>
+            </div>
+          @endforeach
+        @endif
       </div>
+    </div>
 </x-app-layout>

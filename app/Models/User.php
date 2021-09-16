@@ -61,13 +61,19 @@ class User extends Authenticatable
 
             $this::where('id', $this->id)
                 ->update([
-                  'name' => $params['name'],
-                  'image' => basename($file_name),
+                  'name'     => $params['name'],
+                  'katakana' => $params['katakana'],
+                  'image'    => basename($file_name),
+                  'profile'  => $params['profile'],
+                  'email'    => $params['email'],
                 ]);
         } else {
             $this::where('id', $this->id)
                 ->update([
-                  'image' => '',
+                  'name'     => $params['name'],
+                  'katakana' => $params['katakana'],
+                  'profile'  => $params['profile'],
+                  'email'    => $params['email'],
                 ]); 
         }
 

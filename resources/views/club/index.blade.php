@@ -26,7 +26,13 @@
                 <td class="py-4 px-6 border-b border-grey-light">
                   <p>{{$club->name}}</p>
                 </td>
-                <td class="py-4 px-6 border-b border-grey-light">{{$club->image}}</td>
+                <td class="py-4 px-6 border-b border-grey-light">
+                  @if($club->image)
+                    <img class="w-36" src="{{ asset('storage/image/' .$club->image) }}" alt="image">
+                  @else
+                    <i class="text-2xl fas fa-image"></i>
+                  @endif
+                </td>
                 <td class="py-4 px-6 border-b border-grey-light">{{$club->attribute}}</td>
                 <td class="py-4 px-6 border-b border-grey-light flex justify-center">
                   <!-- 更新ボタン -->

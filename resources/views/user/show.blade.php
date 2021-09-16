@@ -5,26 +5,84 @@
     </h2>
   </x-slot>
 
-  <div class="py-12">
-    <div class="max-w-7xl mx-auto sm:w-8/12 md:w-1/2 lg:w-5/12">
+  <div class="md:py-12">
+    <div class="max-w-7xl mx-auto sm:w-8/12 md:w-1/2">
       <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
         <div class="p-6 bg-white">
           <div class="mb-6">
             <div class="flex flex-col mb-4">
-              <p class="mb-2 uppercase font-bold text-lg text-grey-darkest">名前</p>
-              <p class="py-2 px-3 text-grey-darkest" id="name">
-                {{$user->name}}
-              </p>
+              <div class="flex">
+                <div class="w-5/12 flex flex-col items-center justify-between mr-5">
+                  @if($user->image)
+                    <img class="w-full" src="{{ asset('storage/image/' .$user->image) }}" alt="image">
+                  @else
+                    <i class="text-2xl mt-6 fas fa-image"></i>
+                  @endif
+                </div>
+                <div class="w-7/12">
+                  <div class="p-2 flex flex-col justify-between h-full">
+                    <div>
+                      <p class="font-bold text-lg">{{$user->name}}</p>
+                      <p class="text-gray-600 text-xs">{{$user->katakana}}</p>
+                    </div>
+                    <div>
+                      @if($user->city_id)
+                        <p class="mt-2 text-sm"><i class="bukatsu-text-darkblue fas fa-map-pin"></i> {{$user->city->name}}</p>
+                      @endif
+                      <p class="mt-2 text-sm">
+                        <i class="bukatsu-text-darkblue fas fa-running"></i> 
+                        @foreach($user->clubs as $club)
+                          {{$club->name}}<br>
+                        @endforeach
+                      </p>
+                      <p class="mt-2 text-sm">
+                        <i class="bukatsu-text-darkblue far fa-user"></i>
+                        @if($user->sex == 'man')男性
+                        @elseif($user->sex == 'woman')女性
+                        @else 性別未登録
+                        @endif
+                      </p>
+                      <p class="mt-2 text-sm">
+                        <i class="bukatsu-text-darkblue fas fa-birthday-cake"></i>
+                        @if($user->birthday){{ $user->birthday }}
+                        @else 生年月日未登録
+                        @endif
+                      </p>
+  
+                      {{-- 管理者用項目 --}}
+                      @auth
+                        @if(Auth::user()->attribute === 'administrator')
+                          <div class="mt-1 flex justify-between items-center">
+                            <p class="text-gray-400">{{$user->attribute}}</p>
+                            <div class="flex justify-center">
+                              <!-- 更新ボタン -->
+                              <form action="{{ route('user.edit',$user->id) }}" method="GET">
+                                @csrf
+                                <button type="submit" class="mr-2 ml-2 text-md bukatsu-text-blue">
+                                  <i class="fas fa-edit"></i>
+                                </button>
+                              </form>
+                              <!-- 削除ボタン -->
+                              <form action="{{ route('user.destroy',$user->id) }}" method="POST">
+                                @method('delete')
+                                @csrf
+                                <button type="submit" class="mr-2 ml-2 text-md bukatsu-text-red">
+                                  <i class="fas fa-trash-alt"></i>
+                                </button>
+                              </form>
+                            </div>
+                          </div>
+                        @endif
+                      @endauth
+                      {{-- ここまで管理者用項目 --}}
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="flex flex-col mb-4">
-              <p class="mb-2 uppercase font-bold text-lg text-grey-darkest">イメージ</p>
-              <p class="py-2 px-3 text-grey-darkest" id="image">
-                {{$user->image}}
-              </p>
-            </div>
-            <div class="flex flex-col mb-4">
-              <p class="mb-2 uppercase font-bold text-lg text-grey-darkest">profile</p>
-              <p class="py-2 px-3 text-grey-darkest" id="profile">
+            <div class="flex flex-col my-8 border border-gray-200">
+              <p class="px-4 py-2 mb-2 font-bold text-lg bukatsu-text-darkblue bg-gray-50">プロフィール</p>
+              <p class="px-5 py-3 text-grey-700 text-sm" id="profile">
                 {{$user->profile}}
               </p>
             </div>

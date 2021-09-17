@@ -38,6 +38,7 @@ $('.image').on('change', function () {
   $('#cancelCropBtn').data('id', imageId);
   readFile(this, '#cropImagePop', '#upload-demo');
   $(this).val('');
+  console.log('change!');
 });
 $('#cropImageBtn').on('click', function (ev) {
   $uploadCrop.croppie('result', {

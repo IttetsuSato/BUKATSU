@@ -24,10 +24,10 @@
             </div>
             <div class="flex flex-col mb-4">
               <label class="mb-2 uppercase font-bold text-lg text-grey-darkest" for="image">イメージ</label>
-              <img src="{{ asset('storage/image/' .$user->image) }}" width="300" alt="noimage">
-              <input type="file" name="image" class="border py-2 px-3 text-grey-darkest" autocomplete="image">
+              <img class="w-1/2" src="{{ asset('storage/image/' .$user->image) }}" alt="noimage">
+              {{-- <x-croppie class="w-1/2" /> --}}
+              <input id="image" type="file" name="image" class="border py-2 px-3 text-grey-darkest" autocomplete="image">
             
-              <x-croppie />
             </div>
             <div class="flex flex-col mb-4">
               <label class="mb-2 uppercase font-bold text-lg text-grey-darkest" for="image">プロフィール</label>
@@ -38,7 +38,7 @@
               <input class="border py-2 px-3 text-grey-darkest" type="text" name="email" id="email" value="{{$user->email}}">
             </div>
             <div class="flex justify-evenly">
-              <x-button>
+              <x-button id="uploadButton">
                 {{ __('更新') }}
               </x-button>
             </div>

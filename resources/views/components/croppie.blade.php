@@ -1,4 +1,4 @@
-<div id="input-form">
+{{-- <div id="input-form">
   <div id="image-area">
       <label>
           <input type="file" id="image" name="image" accept="image/*" class="image">
@@ -28,4 +28,9 @@
   </div>
   <input type="hidden" id="cropImage" name="cropImage" value="" />
   <button type="submit" name="action" value="send">送信</button>
-</div>
+</div> --}}
+
+<div id="upload-demo"></div>
+<button type="button" id="uploadImage">
+  {{ __('更新2') }}
+</button>

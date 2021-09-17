@@ -14,8 +14,8 @@
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
         <!-- Scripts -->
-        <script src="https://kit.fontawesome.com/137e363532.js" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.5/croppie.min.js"></script>
+        <script src="https://kit.fontawesome.com/137e363532.js" crossorigin="anonymous" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.5/croppie.min.js" defer></script>
         <script src="{{ asset('js/app.js') }}" defer></script>
     </head>
     <body class="bukatsu-font antialiased">

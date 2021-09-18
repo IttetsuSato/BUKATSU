@@ -6,6 +6,7 @@ use App\Http\Controllers\ClubController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AreaController;
 use App\Http\Controllers\CityController;
+use App\Http\Controllers\MailController;
 
 
 /*
@@ -33,7 +34,10 @@ Route::get('club.search', [ClubController::class, 'search'])->name('club.search'
 
 //以下はログインしないと動作しない
 Route::group(['middleware' => 'auth'], function(){
-  
+  Route::post('/confirm', [MailController::class, 'confirm'])
+    ->name('confirm');
+  Route::post('/execute', [MailController::class, 'execute'])
+    ->name('execute');
   Route::resource('user', UserController::class, ['only' => ['index','show', 'edit', 'update','destroy']]);
   Route::resource('area', AreaController::class,['only' => ['index']]);
   Route::resource('city', CityController::class,['only' => ['index']]);

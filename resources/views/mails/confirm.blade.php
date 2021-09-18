@@ -1,7 +1,7 @@
 <x-app-layout>
   <x-slot name="header">
     <h2 class="font-semibold text-lg bukatsu-text-darkblue leading-tight">
-      {{ __('ユーザー情報') }}
+      {{ __('メール確認') }}
     </h2>
   </x-slot>
 
@@ -86,31 +86,8 @@
                 {{$user->profile}}
               </p>
             </div>
-            
+
             <div class="flex flex-col my-8 border border-gray-200">
-              @if( session('name'))
-              <p class="px-4 py-2 mb-2 font-bold text-lg bukatsu-text-white bukatsu-bg-blue">確認画面</p>
-              <form class="mb-6" action="{{ route('execute') }}" method="POST">
-                @csrf
-                <div class="px-5 py-3 text-grey-700 text-sm">
-                  名前：
-                  <input class="border-0 border-b border-gray-400 py-2 px-3" type="text" name="name" id="name" value="{{session('name')}}">
-                </div>
-                <div class="px-5 py-3 text-grey-700 text-sm">
-                  宛先：
-                  <input class="border-0 border-b border-gray-400 py-2 px-3" type="text" name="email" id="email" value="{{session('email')}}">
-                </div>
-                <div class="px-5 py-3 text-grey-700 text-sm">
-                  本文：
-                  <textarea class="border-gray-400 py-2 px-3 my-4 w-full" name="body" id="body"  rows="10">{{ session('body') }}</textarea>
-                </div>
-                <div class="flex justify-evenly">
-                  <x-button>
-                    {{ __('送信') }}
-                  </x-button>
-                </div>
-              </form>
-              @else
               <p class="px-4 py-2 mb-2 font-bold text-lg bukatsu-text-white bukatsu-bg-blue">オファーメールを送る</p>
               <form class="mb-6" action="{{ route('confirm') }}" method="POST">
                 @csrf
@@ -132,7 +109,9 @@
                   </x-button>
                 </div>
               </form>
-              @endif
+              <p class="px-5 py-3 text-grey-700 text-sm" id="profile">
+                {{$user->profile}}
+              </p>
             </div>
             <a href="#" onclick="history.back(-1);return false;" class="block text-center w-full py-3 mt-6 font-medium tracking-widest text-white uppercase bg-black shadow-lg focus:outline-none hover:bg-gray-900 hover:shadow-none">
               Back

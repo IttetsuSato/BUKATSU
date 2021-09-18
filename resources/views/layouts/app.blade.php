@@ -37,13 +37,13 @@
             <div class="footer">
               <div class="bukatsu-bg-blue py-6 px-4 sm:px-6 lg:px-8">
                 <div class="mx-auto bukatsu-text-white">
-                  <a href="#">
+                  <a href="{{ asset('pdf/BUKATSU会社概要.pdf') }}" target="_blank">
                     <p class="font-bold text-xl my-4">会社案内</p>
                   </a>
-                  <a href="#">
+                  <a href="{{ asset('pdf/BUKATSU利用規約.pdf') }}" target="_blank">
                     <p class="font-bold text-xl  my-4">利用規約</p>
                   </a>
-                  <a href="#">
+                  <a href="{{ asset('pdf/BUKATSUプライバシーポリシー.pdf') }}" target="_blank">
                     <p class="font-bold text-xl  my-4">プライバシーポリシー</p>
                   </a>
                   <a href="#">
@@ -57,12 +57,6 @@
                   <div class="flex bukatsu-text-white text-3xl">
                     <a href="#">
                       <i class="m-2 fab fa-facebook-square"></i>
-                    </a>
-                    <a href="#">
-                      <i class="m-2 fab fa-instagram"></i>
-                    </a>
-                    <a href="#">
-                      <i class="m-2 fab fa-twitter-square"></i>
                     </a>
                   </div>
                   <a href="{{route('top')}}">

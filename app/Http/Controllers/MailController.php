@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Validator;
 use App\Mail\OfferMail;
+use Mail;
 
 class MailController extends Controller
 {
@@ -57,7 +58,7 @@ class MailController extends Controller
       $body = $request->body;
     }
 
-    Mail::to($email)->send(new MailSend($name, $body));
+    Mail::to($email)->send(new OfferMail($name, $body));
 
     return back()->with('result', 'メールを送信しました！');
   }

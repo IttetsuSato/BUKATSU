@@ -9,6 +9,7 @@
     <div class="max-w-7xl mx-auto sm:w-8/12 md:w-1/2">
       <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
         <div class="p-6 bg-white">
+          <p class="bukatsu-text-red my-2 text-center">{{ session('result') }}</p>
           <div class="mb-6">
             <div class="flex flex-col mb-4">
               <div class="flex">

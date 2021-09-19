@@ -6,6 +6,7 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Support\Facades\Auth;
 
 class OfferMail extends Mailable
 {
@@ -31,9 +32,9 @@ class OfferMail extends Mailable
      */
     public function build()
     {
-      return $this->view('emails.body')
-      ->from('sample@example.com')
-      ->subject('テストメールです')
+      return $this->view('mails.body')
+      ->from(Auth::user()->email)
+      ->subject('BUKATSU testメール')
       ->with([
         'name' => $this->name,
         'body' => $this->body

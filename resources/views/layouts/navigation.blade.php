@@ -84,10 +84,16 @@
                       </x-slot>
                   </x-dropdown>
               @else
-                  <a href="{{ route('login') }}" class="text-md hover:underline">ログイン</a>
+                  <a href="{{ route('login') }}" class="text-md hover:underline">
+                    <i class="mr-1 fas fa-sign-in-alt"></i>
+                    {{ __('ログイン') }}
+                  </a>
 
                   @if (Route::has('register'))
-                      <a href="{{ route('register') }}" class="ml-6 text-md hover:underline">新規登録</a>
+                      <a href="{{ route('register') }}" class="ml-6 text-md hover:underline">
+                        <i class="mr-1 fas fa-user-plus"></i>
+                        {{ __('新規登録') }}
+                      </a>
                   @endif
               @endauth
             </div>

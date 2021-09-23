@@ -1,9 +1,4 @@
 <x-app-layout>
-  <x-slot name="header">
-    <h2 class="font-semibold text-lg bukatsu-text-darkblue leading-tight">
-      {{ __('ログイン') }}
-    </h2>
-  </x-slot>
   <div class="sm:px-6 lg:px-8 pt-10 bukatsu-bg-white border-b border-gray-200">
     <div class="mt-4 text-center">
       <p class="bukatsu-text-blue font-semibold text-lg">部活と地域のスポーツ指導したい人を<br>つなぐアプリ</p>

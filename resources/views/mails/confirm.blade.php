@@ -1,9 +1,4 @@
 <x-app-layout>
-  <x-slot name="header">
-    <h2 class="font-semibold text-lg bukatsu-text-darkblue leading-tight">
-      {{ __('メール確認') }}
-    </h2>
-  </x-slot>
 
   <div class="md:py-12">
     <div class="max-w-7xl mx-auto sm:w-8/12 md:w-1/2">

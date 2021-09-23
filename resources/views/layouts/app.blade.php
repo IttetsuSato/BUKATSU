@@ -22,12 +22,12 @@
         <div class="min-h-screen bg-gray-100">
             @include('layouts.navigation')
 
-            <!-- Page Heading -->
+            {{-- <!-- Page Heading -->
             <header class="bukatsu-bg-skyblue shadow">
                 <div class="mx-auto py-2 px-4 sm:px-6 lg:px-8">
                     {{ $header }}
                 </div>
-            </header>
+            </header> --}}
 
             <!-- Page Content -->
             <main>

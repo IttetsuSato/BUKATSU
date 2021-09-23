@@ -1,9 +1,4 @@
 <x-app-layout>
-  <x-slot name="header">
-    <h2 class="font-semibold text-lg bukatsu-text-darkblue leading-tight">
-      {{ __('登録画面') }}
-    </h2>
-  </x-slot>
 
   <x-auth-card>
     <!-- Validation Errors -->

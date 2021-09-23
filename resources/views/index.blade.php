@@ -1,9 +1,4 @@
 <x-app-layout>
-  <x-slot name="header">
-      <h2 class="font-semibold text-lg bukatsu-text-darkblue leading-tight">
-          {{ __('トップページ') }}
-      </h2>
-  </x-slot>
 
   {{-- 非ログイン時 --}}
   @auth

@@ -1,9 +1,4 @@
 <x-app-layout>
-  <x-slot name="header">
-    <h2 class="font-semibold text-lg bukatsu-text-darkblue leading-tight">
-      {{ __('登録者一覧') }}
-    </h2>
-  </x-slot>
   
   
     <div class="w-full bukatsu-bg-skyblue py-6 px-4 md:px-6 lg:px-8">

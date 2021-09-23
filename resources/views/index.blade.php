@@ -4,25 +4,27 @@
   @auth
   @else
     <section class="bukatsu-bg-skyblue">
-      <div class="sm:px-6 lg:px-8 pt-10">
+      <div class="sm:px-6 lg:px-8 pt-16">
         <div class="text-center">
-          <p class="bukatsu-text-blue font-extrabold text-lg md:text-2xl">BUKATSUは<br>部活と地域のスポーツ指導したい人を<br>つなぐアプリです</p>
+          <p class="bukatsu-text-blue font-bold text-xl md:text-2xl">BUKATSUは<br>部活と地域のスポーツ指導したい人を<br>つなぐアプリです</p>
         </div>
-        <div class="flex justify-evenly my-4">
-          <div class="bukatsu-register-button">
-            <label class="bukatsu-text-yellow">学校</label>
-            <button class="bukatsu-bg-yellow">
-              <a href="{{ route('registerSchool') }}">新規登録</a>
-            </button>
-          </div>
-          <div class="bukatsu-register-button">
-            <label class="bukatsu-text-red">指導者</label>
-            <button class="bukatsu-bg-red">
-              <a href="{{ route('register') }}">新規登録</a>
-            </button>
+        <div class="mx-auto  my-6 sm:max-w-5xl">
+          <div class="flex justify-evenly">
+            <div class="text-xl text-center font-bold">
+              <label class="bukatsu-text-yellow block w-full mb-3">学校用</label>
+              <button class="bukatsu-bg-yellow bukatsu-text-white font-bold py-3 px-12 rounded-full">
+                <a href="{{ route('registerSchool') }}">新規登録</a>
+              </button>
+            </div>
+            <div class="text-xl text-center font-bold">
+              <label class="bukatsu-text-red block w-full mb-3">指導者用</label>
+              <button class="bukatsu-bg-red bukatsu-text-white font-bold py-3 px-12 rounded-full">
+                <a href="{{ route('register') }}">新規登録</a>
+              </button>
+            </div>
           </div>
         </div>
-        <div class="mt-4 px-16 max-w-sm mx-auto">
+        <div class="mt-4 px-12 max-w-sm mx-auto">
           <img class="text-center mx-auto" src="{{ asset('storage/default_image/two_mens.png') }}" alt="image">
         </div>
       </div>

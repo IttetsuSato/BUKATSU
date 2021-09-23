@@ -1,6 +1,5 @@
 <x-app-layout>
   
-  
     <div class="w-full bukatsu-bg-skyblue py-6 px-4 md:px-6 lg:px-8">
       <div class="flex justify-center flex-wrap">
         @if($users->isEmpty())

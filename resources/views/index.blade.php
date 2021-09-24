@@ -40,11 +40,11 @@
               <h2 class="bukatsu-text-white text-3xl font-bold tracking-wider">特徴</h2>
             </div>
             <div class="px-8 my-8">
-              <div class="flex justify-evenly overflow-x-auto no-scroll-bar">
+              <div class="flex overflow-x-auto">
                 <div class="bukatsu-feature m-3">
                   <div class="text-8xl"><i class="fab fa-creative-commons-nc-jp"></i></div>
-                  <h2 class="font-extrabold text-2xl my-3">登録も利用も<br>完全無料</h2>
-                  <p class="font-bold text-left">BUKATSUは、学校の部活指導のオファーやスポーツを指導したい人をつなぐ機能を無料で利用できます。部活指導を依頼したい学校も教えたい人も費用は0円です。</p>
+                  <h2 class="font-extrabold text-2xl my-3">マッチング無料</h2>
+                  <p class="font-bold text-left">BUKATSUは、学校の部活指導のオファーやスポーツを指導したい人をつなぐ機能を無料で利用できます。部活指導を依頼したい学校も教えたい人もマッチングは0円です。</p>
                 </div>
                 <div class="bukatsu-feature m-3">
                   <div class="text-8xl"><i class="fas fa-skiing-nordic"></i></div>
@@ -55,6 +55,21 @@
                   <div class="text-8xl"><i class="fas fa-comment-dots"></i></div>
                   <h2 class="font-extrabold text-2xl my-3">チャットで<br>簡単にやりとり</h2>
                   <p class="font-bold text-left">BUKATSUでは、学校側とスポーツを指導したい人がマッチした後は、チャットで会話できます。 全ては学生のために必要なことを素早く簡単にやりとりしましょう。</p>
+                </div>
+                <div class="bukatsu-feature m-3">
+                  <div class="text-8xl"><i class="fas fa-users"></i></div>
+                  <h2 class="font-extrabold text-2xl my-3">指導者同士の<br>コミュティ</h2>
+                  <p class="font-bold text-left">BUKATSUの中で出会った指導者同士にコミュニティが生まれ、繋がりが持てます。</p>
+                </div>
+                <div class="bukatsu-feature m-3">
+                  <div class="text-8xl"><i class="fas fa-user-plus"></i></div>
+                  <h2 class="font-extrabold text-2xl my-3">簡単登録</h2>
+                  <p class="font-bold text-left">書面で手間のかかる登録作業もBUKATSUだとわずか、３ステップ。誰でも簡単に登録ができます</p>
+                </div>
+                <div class="bukatsu-feature m-3">
+                  <div class="text-8xl"><i class="fas fa-mobile"></i></div>
+                  <h2 class="font-extrabold text-2xl my-3">ペーパーレス</h2>
+                  <p class="font-bold text-left">全てオンラインで完結し紙の書類手続き、紙の履歴書は不要。</p>
                 </div>
               </div>
             </div>

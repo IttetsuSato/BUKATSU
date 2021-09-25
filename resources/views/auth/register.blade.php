@@ -53,8 +53,8 @@
 
           <!-- Birthday -->
           <div class="">
-            <x-label for="birthday" placeholder="1980/01/01" :value="__('生年月日')" />
-            <x-input id="birthday" class="block  w-full" type="date" name="birthday" :value="old('birthday')" required autofocus />
+            <x-label for="birthday"  :value="__('生年月日（半角 ハイフン必須）')" />
+            <x-input id="birthday" class="block  w-full" type="text" name="birthday" placeholder="1980-01-01" :value="old('birthday')" required autofocus />
           </div>
 
           <!-- 性別 -->

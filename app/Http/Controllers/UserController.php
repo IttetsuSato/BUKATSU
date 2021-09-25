@@ -11,7 +11,7 @@ class UserController extends Controller
 
   public function indexByCity($city_id)
   {
-    $users = User::where('city_id', $city_id)->where('attribute', 'civilian')->get();
+    $users = User::where('city_id', $city_id)->where('attribute', 'civilian')->orderBy('updated_at', 'desc')->get();
     return view('user.index',[
       'users' => $users
     ]);

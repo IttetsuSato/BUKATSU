@@ -100,7 +100,7 @@
       <div class="my-8 grid grid-flow-col grid-cols-1 grid-rows-4 md:grid-cols-2 md:grid-rows-2">
         @foreach($news as $new)
         <div>
-          <div class="my-3 md:mx-4 md:p-6">
+          <div class="my-3 md:mx-4 md:px-6 md:py-3">
             @if($new->attribute === 'school')
               <div>
                 @if($new->image)

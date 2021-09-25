@@ -5,10 +5,15 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Validator;
 use App\Models\User;
+use App\Models\Club;
 
 class UserController extends Controller
 {
 
+  public function registerClubsCreate(){
+    $clubs = Club::getAllClubOrderByAttribute();
+    return view('user.registerClubs',compact('clubs'));
+  }
   public function indexByCity($city_id)
   {
     $users = User::where('city_id', $city_id)->where('attribute', 'civilian')->orderBy('updated_at', 'desc')->get();

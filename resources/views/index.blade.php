@@ -40,7 +40,7 @@
               <h2 class="bukatsu-text-white text-3xl font-bold tracking-wider">特徴</h2>
             </div>
             <div class="px-8 my-8">
-              <div class="flex overflow-x-auto">
+              <div class="flex overflow-x-auto pb-4">
                 <div class="bukatsu-feature m-3">
                   <div class="text-8xl"><i class="fab fa-creative-commons-nc-jp"></i></div>
                   <h2 class="font-extrabold text-2xl my-3">マッチング無料</h2>

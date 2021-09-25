@@ -148,7 +148,7 @@
         {{-- 指導者用フォームここまで --}}
 
         {{-- 学校用フォーム --}}
-              @if($attribute === 'school')
+        @if($attribute === 'school')
 
               <!-- Name -->
               <div>
@@ -215,8 +215,8 @@
                   @endforeach
                 </select>
               </div>
-              @endif
-              {{-- 学校用フォームここまで --}}
+        @endif
+        {{-- 学校用フォームここまで --}}
 
         <div class="flex flex-col items-center my-8">
           <x-button class="my-6 bukatsu-bg-red">

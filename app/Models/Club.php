@@ -50,6 +50,6 @@ class Club extends Model
 
     public static function getAllClubOrderByAttribute()
     {
-      return self::orderBy('attribute', 'desc')->orderby('name', 'asc')->get();
+      return self::with('users')->orderBy('attribute', 'desc')->orderby('name', 'asc')->get();
     }
 }

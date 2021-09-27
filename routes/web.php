@@ -36,7 +36,8 @@ Route::get('club.search', [ClubController::class, 'search'])->name('club.search'
 Route::group(['middleware' => 'auth'], function(){
   Route::post('/confirm', [MailController::class, 'confirm'])->name('confirm');
   Route::post('/execute', [MailController::class, 'execute'])->name('execute');
-  Route::get('registerClubs', [UserController::class, 'registerClubsCreate']);
+  Route::get('registerClubs', [UserController::class, 'registerClubsCreate'])->name('registerClubs');
+  Route::post('updateClubs.{user_id}', [UserController::class, 'registerClubsUpdate'])->name('updateClubs');
   Route::resource('user', UserController::class, ['only' => ['index','show', 'edit', 'update','destroy']]);
   Route::resource('area', AreaController::class,['only' => ['index']]);
   Route::resource('city', CityController::class,['only' => ['index']]);

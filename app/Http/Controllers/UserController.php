@@ -4,16 +4,35 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Validator;
+use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use App\Models\Club;
 
 class UserController extends Controller
 {
 
+  // 部活選択画面を表示
   public function registerClubsCreate(){
     $clubs = Club::getAllClubOrderByAttribute();
+
     return view('user.registerClubs',compact('clubs'));
   }
+
+  // ブカツの配列をすべて登録
+  public function registerClubsUpdate(Request $request, $user_id){
+    if(isset($request)){
+      if(is_array($request->all())){
+        $clubs = $request->all();
+      }
+    }
+    $user = User::find($user_id);
+    foreach($clubs["club_id"] as $club_id){
+      $user->clubs()->sync($club_id);
+    }
+    return redirect(RouteServiceProvider::HOME);
+  }
+
+
   public function indexByCity($city_id)
   {
     $users = User::where('city_id', $city_id)->where('attribute', 'civilian')->orderBy('updated_at', 'desc')->get();

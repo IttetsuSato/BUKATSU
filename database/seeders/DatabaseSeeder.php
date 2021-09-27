@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
           ClubSeeder::class,
           AreaSeeder::class,
           CitySeeder::class,
+          ClubUserSeeder::class,
       ]);
     }
 }

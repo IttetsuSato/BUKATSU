@@ -6,6 +6,7 @@
         <div class="p-6 bg-white border-b border-gray-200">
           <p class="bukatsu-text-red my-2 text-center">{{ session('result') }}</p>
           @include('common.errors')
+
           <form class="mb-6" action="{{ route('user.update',$user->id) }}" method="POST" enctype="multipart/form-data">
             @method('put')
             @csrf
@@ -38,6 +39,12 @@
               </x-button>
             </div>
           </form>
+
+          <a href="{{ route('registerClubs') }}">
+            <x-button>
+              {{ __('登録部活動の変更') }}
+            </x-button>
+          </a>
         </div>
       </div>
     </div>

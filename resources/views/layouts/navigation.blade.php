@@ -59,11 +59,11 @@
                             {{ __('トップページ') }}
                           </x-dropdown-link>
                         </form>
-                        <!-- 更新ボタン -->
-                        <form action="{{ route('user.edit', Auth::user()->id) }}" method="GET">
+                        <!-- マイページボタン -->
+                        <form action="{{ route('myPage') }}" method="GET">
                           @csrf
                           
-                          <x-dropdown-link :href="route('user.edit', Auth::user()->id)"
+                          <x-dropdown-link :href="route('myPage')"
                             onclick="event.preventDefault();
                                                 this.closest('form').submit();">
                             <i class="mr-2 fas fa-user"></i>
@@ -156,10 +156,10 @@
 
             <div class="mt-3 space-y-1">
                 <!-- 更新ボタン -->
-                <form action="{{ route('user.edit', Auth::user()->id) }}" method="GET">
+                <form action="{{ route('myPage') }}" method="GET">
                   @csrf
                   
-                  <x-responsive-nav-link :href="route('user.edit', Auth::user()->id)"
+                  <x-responsive-nav-link :href="route('myPage')"
                     onclick="event.preventDefault();
                                         this.closest('form').submit();">
                     <i class="mr-2 fas fa-user"></i>

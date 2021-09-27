@@ -34,6 +34,7 @@ Route::get('club.search', [ClubController::class, 'search'])->name('club.search'
 
 //以下はログインしないと動作しない
 Route::group(['middleware' => 'auth'], function(){
+  Route::get('myPage', function(){return view('user.myPage');})->name('myPage');
   Route::post('/confirm', [MailController::class, 'confirm'])->name('confirm');
   Route::post('/execute', [MailController::class, 'execute'])->name('execute');
   Route::get('registerClubs', [UserController::class, 'registerClubsCreate'])->name('registerClubs');

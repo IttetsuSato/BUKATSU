@@ -29,7 +29,7 @@ class UserController extends Controller
     foreach($clubs["club_id"] as $club_id){
       $user->clubs()->sync($club_id);
     }
-    return redirect(RouteServiceProvider::HOME);
+    return redirect('myPage');
   }
 
 

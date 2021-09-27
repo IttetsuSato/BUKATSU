@@ -39,12 +39,6 @@
               </x-button>
             </div>
           </form>
-
-          <a href="{{ route('registerClubs') }}">
-            <x-button>
-              {{ __('登録部活動の変更') }}
-            </x-button>
-          </a>
         </div>
       </div>
     </div>

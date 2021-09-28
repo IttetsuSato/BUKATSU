@@ -13,7 +13,7 @@
           </div>
           <div class="flex items-center my-6 w-8/12">
             <a href="{{ route('user.edit', Auth::user()->id) }}">
-              <x-button>
+              <x-button class="w-full">
                 {{ __('ユーザー情報の変更') }}
               </x-button>
             </a>

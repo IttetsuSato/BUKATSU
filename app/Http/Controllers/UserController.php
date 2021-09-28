@@ -27,7 +27,7 @@ class UserController extends Controller
     }
     $user = User::find($user_id);
     foreach($clubs["club_id"] as $club_id){
-      $user->clubs()->sync($club_id);
+      $user->clubs()->syncWithoutDetaching($club_id);
     }
     return redirect('myPage');
   }

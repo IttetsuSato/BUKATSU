@@ -20,37 +20,38 @@ class UserSeeder extends Seeder
       $liberal_arts = ['放送文化','サイエンス','美術','書道','吹奏楽','茶道','合唱','演劇','新聞','文芸','将棋','バンド'];
       for($i = 1; $i<= count($sports) + count($liberal_arts); $i++){
         DB::table('users')->insert([
-          'name' => 'テストユーザー'.$i,
-          'katakana' => 'テストユーザー'.$i,
+          'name'      => 'テストユーザー'.$i,
+          'katakana'  => 'テストユーザー'.$i,
           'attribute' => 'civilian',
-          'city_id' => mt_rand(1,179),
-          'profile' => '私はテストユーザーです',
-          'birthday' => '2000-05-01',
-          'sex' => 'man',
-          'career' => mt_rand(1, 30),
-          'email' => 'civilian'.$i.'@test.com',
-          'password' => Hash::make('12345678'),
+          'city_id'   => mt_rand(1,179),
+          'profile'   => '私はテストユーザーです',
+          'birthday'  => '2000-05-01',
+          'sex'       => 'man',
+          'career'    => mt_rand(1, 30),
+          'email'     => 'civilian'.$i.'@test.com',
+          'password'  => Hash::make('12345678'),
           'created_at'     => now(),
           'updated_at'     => now(),
         ]);
 
         DB::table('users')->insert([
-            'name' => 'テスト学園',
-            'katakana' => 'テストガクエン'.$i,
+            'name'      => 'テスト学園',
+            'katakana'  => 'テストガクエン'.$i,
             'attribute' => 'school',
-            'city_id' => mt_rand(1,179),
-            'profile' => '私はテスト学園です。',
-            'email' => 'school'.$i.'@test.com',
-            'password' => Hash::make('12345678'),
+            'city_id'   => mt_rand(1,179),
+            'profile'   => '私はテスト学園です。',
+            'email'     => 'school'.$i.'@test.com',
+            'password'  => Hash::make('12345678'),
             'created_at'     => now(),
             'updated_at'     => now(),
         ]);
       }
 
       DB::table('users')->insert([
-          'name' => '管理者A',
-          'attribute'=> 'administrator',
-          'email'=> '1010bukatsu.info@gmail.com',
+          'name'      => '管理者A',
+          'katakana'  => 'カンリシャA',
+          'attribute' => 'administrator',
+          'email'     => '1010bukatsu.info@gmail.com',
           'password'       => Hash::make('12345678'),
           'created_at'     => now(),
           'updated_at'     => now(),

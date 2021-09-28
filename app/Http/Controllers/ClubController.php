@@ -30,7 +30,7 @@ class ClubController extends Controller
      */
     public function index()
     {
-      $clubs = Club::getAllClubByName();
+      $clubs = Club::getAllClubOrderByAttribute();
       return view('club.index', [
         'clubs' => $clubs
       ]);

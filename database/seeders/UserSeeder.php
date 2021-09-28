@@ -54,7 +54,7 @@ class UserSeeder extends Seeder
         ]);
 
         DB::table('users')->insert([
-            'name'      => 'テスト学園',
+            'name'      => 'テスト第'.$i.'学園',
             'katakana'  => 'テストガクエン'.$i,
             'attribute' => 'school',
             'city_id'   => mt_rand(1,179),

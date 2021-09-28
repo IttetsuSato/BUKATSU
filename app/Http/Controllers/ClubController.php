@@ -11,7 +11,7 @@ class ClubController extends Controller
 
   public function search()
   {
-    $clubs = Club::all();
+    $clubs = Club::getAllClubOrderByAttribute();
     return view('search.club',compact('clubs'));
   }
 

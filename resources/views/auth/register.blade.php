@@ -53,18 +53,26 @@
 
           <!-- Birthday -->
           <div class="">
-            <x-label for="birthday"  :value="__('生年月日（半角 ハイフン必須）')" />
-            <x-input id="birthday" class="block  w-full" type="text" name="birthday" placeholder="1980-01-01" :value="old('birthday')" required autofocus />
+            <x-label for="birthday"  :value="__('生年月日')" />
+            <div class="py-3 px-3">
+              <select class="border-gray-400 rounded-md" name="birth_year" id="birth_year" required autofocus :value="old('birth_year')"><option disabled>年を選択</option></select>
+              <select class="border-gray-400 rounded-md mx-1" name="birth_month" id="birth_month" required autofocus :value="old('birth_month')"><option disabled>月を選択</option></select>
+              <select class="border-gray-400 rounded-md" name="birth_day" id="birth_day" required autofocus :value="old('birth_day')"><option disabled>日を選択</option></select>
+            </div>
           </div>
 
           <!-- 性別 -->
           <div class="">
             <x-label for="sex" :value="__('性別')" />
             <div id="sex"  class="text-lg leading-6 px-5 py-4">
-              <label for="man">男性</label>
-              <input id="man" type="radio" name="sex" value="man" required autofocus />
-              <label for="woman">女性</label>
-              <input id="woman"  type="radio" name="sex" value="woman" required autofocus />
+              <div class="mx-2 inline">
+                <label for="man">男性</label>
+                <input id="man" type="radio" name="sex" value="man" required autofocus />
+              </div>
+              <div class="mx-2 inline">
+                <label for="woman">女性</label>
+                <input id="woman"  type="radio" name="sex" value="woman" required autofocus />
+              </div>
             </div>
           </div>
 
@@ -83,38 +91,6 @@
           <div class="">
             <x-label for="career" :value="__('指導歴（年）')" />
             <select class="border text-lg leading-8  py-2 px-5 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="career" id="career" required autofocus>
-              <option value="">-</option>
-              <option value="0">0</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-              <option value="10">10</option>
-              <option value="11">11</option>
-              <option value="12">12</option>
-              <option value="13">13</option>
-              <option value="14">14</option>
-              <option value="15">15</option>
-              <option value="16">16</option>
-              <option value="17">17</option>
-              <option value="18">18</option>
-              <option value="19">19</option>
-              <option value="20">20</option>
-              <option value="21">21</option>
-              <option value="22">22</option>
-              <option value="23">23</option>
-              <option value="24">24</option>
-              <option value="25">25</option>
-              <option value="26">26</option>
-              <option value="27">27</option>
-              <option value="28">28</option>
-              <option value="29">29</option>
-              <option value="30">30~</option>
             </select>
           </div>
 
@@ -140,7 +116,7 @@
                   @foreach($cities as $city)
                   <option value="{{ $city->id }}">{{ $city->name }}</option>
                   @endforeach
-                </optgroup>
+              </optgroup>
               @endforeach
             </select>
           </div>

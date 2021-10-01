@@ -3,6 +3,20 @@ require('./bootstrap');
 
 require('alpinejs');
 
+// 数字がたくさんあるoptionタグを作る関数
+function makeIntOption($id, $min, $max)
+{
+  for(let i = $min; i <= $max; i++){
+    $('#'+ $id).append('<option value="'+i+'">' + i + '</option>')
+  }
+}
+
+$(function(){
+  makeIntOption("career",0,50);
+  makeIntOption("birth_year",1930,2022);
+  makeIntOption("birth_month",1,12);
+  makeIntOption("birth_day",1,31);
+
 // 地域の選択によって市町村のセレクトボックスが変わる(register.blade.php)
 const areaSelect = document.getElementById('area');
 if(areaSelect){
@@ -25,3 +39,5 @@ if(areaTitles){
     });
   });
 }
+
+});

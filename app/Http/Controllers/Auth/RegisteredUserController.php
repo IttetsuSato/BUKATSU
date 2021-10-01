@@ -57,7 +57,6 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request)
     {
-
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'katakana' => ['string', 'max:255'],
@@ -65,11 +64,15 @@ class RegisteredUserController extends Controller
             'city_id' => ['required', 'integer'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
-            'birthday' => ['date'],
+            'birth_year' => ['integer'],
+            'birth_month' => ['integer'],
+            'birth_day' => ['integer'],
             'sex' => ['string'],
             'club_id' => ['string'],
             'career' => ['integer'],
         ]);
+
+        $birthday = $request->birth_year .'-'. $request->birth_month  .'-'. $request->birth_day;
 
         $user = User::create([
             'name' => $request->name,
@@ -78,7 +81,7 @@ class RegisteredUserController extends Controller
             'attribute' => $request->attribute,
             'city_id' => $request->city_id,
             'password' => Hash::make($request->password),
-            'birthday' => $request->birthday,
+            'birthday' => $birthday,
             'sex' => $request->sex,
             'career' => $request->career,
         ]);

@@ -6,19 +6,24 @@
     <section class="bukatsu-bg-skyblue">
       <div class="sm:px-6 lg:px-8 pt-16">
         <div class="text-center">
-          <p class="bukatsu-text-blue font-bold text-xl md:text-2xl">BUKATSUは<br>部活と地域のスポーツ指導したい人を<br>つなぐアプリです</p>
+          <p class="bukatsu-text-blue font-bold text-xl md:text-3xl tracking-wide">
+            BUKATUは<br>
+            学校の部活と地域の<br>
+            スポーツ、文化系を指導したい人を<br>
+            つなぐプラットフォームです
+          </p>
         </div>
-        <div class="mx-auto  my-6 sm:max-w-5xl">
+        <div class="mx-auto  my-8 sm:max-w-2xl">
           <div class="flex justify-evenly">
-            <div class="text-xl text-center font-bold">
-              <label class="bukatsu-text-yellow block w-full mb-3">学校用</label>
-              <button class="bukatsu-bg-yellow bukatsu-text-white font-bold py-3 px-12 rounded-full">
+            <div class="text-lg text-center font-bold">
+              <label class="bukatsu-text-yellow block w-full">学校・自治体<br>の方はこちら</label>
+              <button class="bukatsu-bg-yellow bukatsu-text-white  text-xl font-bold py-3 px-12 mt-3 rounded-full">
                 <a href="{{ route('registerSchool') }}">新規登録</a>
               </button>
             </div>
-            <div class="text-xl text-center font-bold">
-              <label class="bukatsu-text-red block w-full mb-3">指導者用</label>
-              <button class="bukatsu-bg-red bukatsu-text-white font-bold py-3 px-12 rounded-full">
+            <div class="text-lg text-center font-bold">
+              <label class="bukatsu-text-red block w-full">指導者<br>の方はこちら</label>
+              <button class="bukatsu-bg-red bukatsu-text-white text-xl font-bold py-3 px-12 mt-3 rounded-full ">
                 <a href="{{ route('register') }}">新規登録</a>
               </button>
             </div>

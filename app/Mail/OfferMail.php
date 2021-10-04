@@ -33,7 +33,6 @@ class OfferMail extends Mailable
     public function build()
     {
       return $this->view('mails.body')
-      ->from(Auth::user()->email)
       ->subject('BUKATSU オファーメール')
       ->with([
         'name' => $this->name,

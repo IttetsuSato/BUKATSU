@@ -59,6 +59,7 @@ class MailController extends Controller
     }
 
     Mail::to($email)->send(new OfferMail($name, $body));
+    
 
     return back()->with('result', 'メールを送信しました！');
   }

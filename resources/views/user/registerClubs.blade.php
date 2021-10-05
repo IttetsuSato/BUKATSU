@@ -30,11 +30,16 @@
             </div>
           </div>
 
-        <div class="flex flex-col items-center my-8">
+        <div class="flex flex-col items-center my-6">
           <x-button class="my-6 bukatsu-bg-red">
               {{ __('送信') }}
           </x-button>
 
+        </div>
+        <div class="mb-8">
+          <a href="#" onclick="history.back(-1);return false;" class="block text-center w-6/12 py-3 mt-6 mx-auto font-medium rounded-sm tracking-widest text-white uppercase bg-gray-500 shadow-sm focus:outline-none hover:bg-gray-600 hover:shadow-none">
+            戻る
+          </a>
         </div>
     </form>
   </x-auth-card>

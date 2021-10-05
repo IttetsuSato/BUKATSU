@@ -16,6 +16,13 @@
               </li>
               @endforeach
             </ul>
+            <div class="flex justify-center my-6">
+              <a href="{{ route('top') }}" class="font-extrabold text-lg">
+                <button class="bukatsu-search-button bukatsu-bg-blue m-3 font-extrabold text-lg">
+                  トップに戻る
+                </button>
+              </a>
+            </div>
           </div>
       </div>
     </div>

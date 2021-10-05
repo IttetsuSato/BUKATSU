@@ -6,9 +6,6 @@
           <div class="w-full md:w-5/12 py-4 px-6 my-8 mx-4 border border-gray shadow">
             <div class="h-44 flex flex-col justify-center items-center">
               <p class="font-bold text-xl text-gray-600">条件に該当する登録者がいません</p>
-              <a href="#" onclick="history.back(-1);return false;" class="block text-center w-1/2 py-3 mt-6 font-medium tracking-widest text-white uppercase bukatsu-bg-blue">
-                戻る
-              </a>
             </div>
           <div>
         @else
@@ -77,6 +74,11 @@
             </div>
           @endforeach
         @endif
+      </div>
+      <div class="my-6 mt-10">
+        <a href="#" onclick="history.back(-1);return false;" class="block text-center w-6/12 max-w-xl py-3 mt-6 mx-auto font-medium rounded-sm tracking-widest text-white uppercase bg-gray-500 shadow-sm focus:outline-none hover:bg-gray-600 hover:shadow-none">
+          戻る
+        </a>
       </div>
     </div>
 </x-app-layout>

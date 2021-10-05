@@ -8,22 +8,31 @@
           @include('common.errors')
 
 
-          <div class="flex fustity-center items-center text-center mb-8">
+          <div class="flex justity-center items-center text-center mb-8">
             <h2 class="bukatsu-text-blue font-bold text-xl">マイページ</h2>
           </div>
-          <div class="flex items-center my-6 w-8/12">
-            <a href="{{ route('user.edit', Auth::user()->id) }}">
-              <x-button class="w-full">
-                {{ __('ユーザー情報の変更') }}
-              </x-button>
-            </a>
+          <div class="flex flex-col items-center my-6">
+
+            <div class="flex items-center justity-center my-4 w-full md:w-8/12">
+              <a class="w-full" href="{{ route('user.edit', Auth::user()->id) }}">
+                <x-button class="w-full">
+                  {{ __('ユーザー情報の変更') }}
+                </x-button>
+              </a>
+            </div>
+  
+            <div class="flex items-center justity-center my-4  w-full md:w-8/12">
+              <a class="w-full" href="{{ route('registerClubs') }}">
+                <x-button class="w-full">
+                  {{ __('登録部活動の変更') }}
+                </x-button>
+              </a>
+            </div>
           </div>
 
-          <div class="flex items-center my-6 w-8/12">
-            <a href="{{ route('registerClubs') }}">
-              <x-button>
-                {{ __('登録部活動の変更') }}
-              </x-button>
+          <div class="my-6 mt-10">
+            <a href="#" onclick="history.back(-1);return false;" class="block text-center w-6/12 py-3 mt-6 mx-auto font-medium rounded-sm tracking-widest text-white uppercase bg-gray-500 shadow-sm focus:outline-none hover:bg-gray-600 hover:shadow-none">
+              戻る
             </a>
           </div>
         </div>

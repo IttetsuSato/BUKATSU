@@ -76,24 +76,6 @@
             </div>
           </div>
 
-          <!-- 指導種目 -->
-          <div class="">
-            <x-label for="club" :value="__('指導種目')" />
-            <select class="border text-lg leading-8  py-2 px-5 pr-8 block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="club_id" id="club" required autofocus>
-              <option disabled selected value> -- 種目を選択 -- </option>
-              @foreach($clubs as $club)
-              <option value="{{ $club->id }}">{{ $club->name }}</option>
-              @endforeach
-            </select>
-          </div>
-
-          <!-- 指導年数 -->
-          <div class="">
-            <x-label for="career" :value="__('指導歴（年）')" />
-            <select class="border text-lg leading-8  py-2 px-5 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="career" id="career" required autofocus>
-            </select>
-          </div>
-
           <!-- エリア -->
           <div class="">
             <x-label for="area" :value="__('エリア')" />
@@ -120,6 +102,36 @@
               @endforeach
             </select>
           </div>
+          
+          <!-- 指導種目 -->
+          <div class="">
+            <x-label for="club" :value="__('指導種目')" />
+            <select class="border text-lg leading-8  py-2 px-5 pr-8 block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="club_id" id="club" required autofocus>
+              <option disabled selected value> -- 種目を選択 -- </option>
+              @foreach($clubs as $club)
+              <option value="{{ $club->id }}">{{ $club->name }}</option>
+              @endforeach
+            </select>
+          </div>
+
+          <!-- 指導年数 -->
+          <div class="">
+            <x-label for="career" :value="__('指導歴（年）')" />
+            <select class="border text-lg leading-8  py-2 px-5 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="career" id="career" required autofocus>
+            </select>
+          </div>
+
+          <!-- プロフィール -->
+          <div>
+            <x-label for="profile" :value="__('主な実績')" />
+            <textarea rows="4" name="profile" id="profile" 
+            class="w-full text-lg px-4 mb-0 leading-8 border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"  
+            placeholder="現役時代、100mで世界大会優勝
+外部コーチとして高校生の指導経験あり" 
+            :value="old('profile')" 
+            autofocus></textarea>
+          </div>
+
         @endif
         {{-- 指導者用フォームここまで --}}
 

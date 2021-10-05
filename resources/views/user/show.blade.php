@@ -130,8 +130,8 @@
               </form>
               @endif
             </div>
-            <a href="#" onclick="history.back(-1);return false;" class="block text-center w-full py-3 mt-6 font-medium tracking-widest text-white uppercase bg-black shadow-lg focus:outline-none hover:bg-gray-900 hover:shadow-none">
-              Back
+            <a href="#" onclick="history.back(-1);return false;" class="block text-center w-6/12 py-3 mt-6 mx-auto font-medium rounded-sm tracking-widest text-white uppercase bg-gray-500 shadow-sm focus:outline-none hover:bg-gray-600 hover:shadow-none">
+              戻る
             </a>
           </div>
         </div>

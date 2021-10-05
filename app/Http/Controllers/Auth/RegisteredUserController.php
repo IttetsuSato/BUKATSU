@@ -70,6 +70,7 @@ class RegisteredUserController extends Controller
             'sex' => ['string'],
             'club_id' => ['string'],
             'career' => ['integer'],
+            'profile' => ['string', 'max:500'],
         ]);
 
         $birthday = $request->birth_year .'-'. $request->birth_month  .'-'. $request->birth_day;
@@ -84,6 +85,7 @@ class RegisteredUserController extends Controller
             'birthday' => $birthday,
             'sex' => $request->sex,
             'career' => $request->career,
+            'profile' => $request->profile,
         ]);
 
       //中間テーブルへの保存

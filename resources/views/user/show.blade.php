@@ -77,7 +77,7 @@
               </div>
             </div>
             <div class="flex flex-col my-8 border border-gray-200">
-              <p class="px-4 py-2 mb-2 font-bold text-lg bukatsu-text-darkblue bg-gray-50">プロフィール</p>
+              <p class="px-4 py-2 mb-2 font-bold text-lg bukatsu-text-darkblue bg-gray-50">実績・プロフィール</p>
               <p class="px-5 py-3 text-grey-700 text-sm" id="profile">
                 {{$user->profile}}
               </p>
@@ -101,7 +101,7 @@
                   <textarea class="border-gray-400 py-2 px-3 my-4 w-full" name="body" id="body"  rows="10">{{ session('body') }}</textarea>
                 </div>
                 <div class="flex justify-evenly">
-                  <x-button>
+                  <x-button class="bukatsu-bg-red">
                     {{ __('送信') }}
                   </x-button>
                 </div>

@@ -123,7 +123,7 @@
 
           <!-- プロフィール -->
           <div>
-            <x-label for="profile" :value="__('主な実績')" />
+            <x-label for="profile" :value="__('主な実績・プロフィール')" />
             <textarea rows="4" name="profile" id="profile" 
             class="w-full text-lg px-4 mb-0 leading-8 border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"  
             placeholder="現役時代、100mで世界大会優勝

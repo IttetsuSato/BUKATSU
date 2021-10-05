@@ -7,7 +7,7 @@
       <div class="sm:px-6 lg:px-8 pt-16">
         <div class="text-center">
           <p class="bukatsu-text-blue font-bold text-xl md:text-3xl tracking-wide">
-            BUKATUは<br>
+            BUKATSUは<br>
             学校の部活と地域の<br>
             スポーツ、文化系を指導したい人を<br>
             つなぐプラットフォームです

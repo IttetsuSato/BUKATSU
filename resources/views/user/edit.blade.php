@@ -45,7 +45,7 @@
                 {{ __('更新') }}
               </x-button>
             </div>
-            <a href="#" onclick="history.back(-1);return false;" class="block text-center w-6/12 py-3 mt-8 mx-auto font-medium rounded-sm tracking-widest text-white uppercase bg-gray-500 shadow-sm focus:outline-none hover:bg-gray-600 hover:shadow-none">
+            <a href="{{ route('myPage') }}" class="block text-center w-6/12 py-3 mt-8 mx-auto font-medium rounded-sm tracking-widest text-white uppercase bg-gray-500 shadow-sm focus:outline-none hover:bg-gray-600 hover:shadow-none">
               戻る
             </a>
           </form>

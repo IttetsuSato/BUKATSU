@@ -141,7 +141,7 @@
               <!-- Name -->
               <div>
                   <x-label for="name" :value="__('学校名')" />
-                  <x-input id="name" class="block  w-full" type="text" name="name" placeholder="部活高校" :value="old('name')" required autofocus />
+                  <x-input id="name" class="block  w-full" type="text" name="name" :value="old('name')" required autofocus />
               </div>
   
               <!-- Attribute -->
@@ -153,7 +153,7 @@
               <div class="">
                   <x-label for="email" :value="__('メールアドレス')" />
   
-                  <x-input id="email" class="block  w-full" type="email" name="email"  placeholder="bukatsu_test@gmail.com" :value="old('email')" required />
+                  <x-input id="email" class="block  w-full" type="email" name="email" :value="old('email')" required />
               </div>
   
               <!-- Password -->

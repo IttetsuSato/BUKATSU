@@ -19,7 +19,6 @@ class MailController extends Controller
     $validator = Validator::make($request->all(), [
       'name' => 'required',
       'email' => 'required|email',
-      'body' => 'max:500'
     ]);
 
     if ($validator->fails()) {
@@ -28,10 +27,9 @@ class MailController extends Controller
 
     $result = [];
 
-    if ($request->has(['name', 'email', 'body'])) {
+    if ($request->has(['name', 'email'])) {
       $result['name'] = $request->name;
       $result['email'] = $request->email;
-      $result['body'] = $request->body;
     } else {
       return redirect('/index', $result);
     }
@@ -39,7 +37,6 @@ class MailController extends Controller
     return back()->with([
       'name' => $result['name'],
       'email' => $result['email'],
-      'body' => $result['body'],
     ]);
 
   }
@@ -52,14 +49,13 @@ class MailController extends Controller
   public function execute(Request $request)
   {
 
-    if ($request->has(['name', 'email', 'body'])) {
+    if ($request->has(['name', 'email'])) {
       $name = $request->name;
       $email = $request->email;
-      $body = $request->body;
     }
 
-    Mail::to($email)->send(new OfferMail($name, $body));
-    
+    Mail::to($email)->send(new OfferMail($name));
+
 
     return back()->with('result', 'メールを送信しました！');
   }

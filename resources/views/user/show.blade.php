@@ -118,10 +118,10 @@
                   宛先：
                   <input class="border-0 border-b border-gray-400 py-2 px-3" type="text" name="email" id="email" value="{{$user->email}}">
                 </div>
-                <div class="px-5 py-3 text-grey-700 text-sm">
+                {{-- <div class="px-5 py-3 text-grey-700 text-sm">
                   本文：
                   <textarea class="border-gray-400 py-2 px-3 my-4 w-full" name="body" id="body"  rows="10">{{ old('body') }}</textarea>
-                </div>
+                </div> --}}
                 <div class="flex justify-evenly">
                   <x-button>
                     {{ __('確認画面へ') }}

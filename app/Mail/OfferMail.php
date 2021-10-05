@@ -13,16 +13,14 @@ class OfferMail extends Mailable
     use Queueable, SerializesModels;
 
     protected string $name;
-    protected string $body;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct(string $name, string $body)
+    public function __construct(string $name)
   {
     $this->name = $name;
-    $this->body = $body;
   }
 
     /**
@@ -33,10 +31,9 @@ class OfferMail extends Mailable
     public function build()
     {
       return $this->view('mails.body')
-      ->subject('BUKATSU オファーメール')
+      ->subject('オファーが届きました!!')
       ->with([
         'name' => $this->name,
-        'body' => $this->body,
         'email' => Auth::user()->email
       ]);
     }

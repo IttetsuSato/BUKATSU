@@ -73,7 +73,11 @@ class RegisteredUserController extends Controller
             'profile' => ['string', 'max:500'],
         ]);
 
-        $birthday = $request->birth_year .'-'. $request->birth_month  .'-'. $request->birth_day;
+        if($request->birth_year && $request->birth_month && $request->birth_day){
+          $birthday = $request->birth_year .'-'. $request->birth_month  .'-'. $request->birth_day;
+        }else{
+          $birthday = null;
+        }
 
         $user = User::create([
             'name' => $request->name,

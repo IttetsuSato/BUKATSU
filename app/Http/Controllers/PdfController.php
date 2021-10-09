@@ -8,10 +8,13 @@ class PdfController extends Controller
 {
   public function privacyPolicy()
   {
-      $file_path = storage_path('app/pdf/BUKATSUプライバシーポリシー.pdf');
-      // $headers = ['Content-disposition' => 'inline; filename="BUKATSUプライバシーポリシー.pdf"'];
-      return response()->file($file_path);
-      // 保存ファイル名の指定が不要なら headers 指定なしで OK
-      // return response()->file($file_path);
+    $disk = 'local';  // or 's3'
+    $storage = Storage::disk($disk);
+    $file_name = 'BUKATSUプライバシーポリシー.pdf';
+    $pdf_path = 'pdf/' . $file_name;
+    $file = $storage->get($pdf_path);
+    return response($file, 200)
+        ->header('Content-Type', 'application/pdf')
+        ->header('Content-Disposition', 'inline; filename="' . $file_name . '"');
   }
 }

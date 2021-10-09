@@ -36,23 +36,26 @@
             </main>
 
             <div class="footer">
-              {{-- <div class="bukatsu-bg-blue py-6 px-4 sm:px-6 lg:px-8">
+              <div class="bukatsu-bg-blue py-6 px-4 sm:px-6 lg:px-8">
                 <div class="mx-auto bukatsu-text-white">
-                  <a href="{{ asset('pdf/BUKATSU会社概要.pdf') }}" target="_blank">
-                    <p class="font-bold text-xl my-4">会社案内</p>
+                  {{-- <a href="{{ asset('pdf/BUKATSU会社概要.pdf') }}" target="_blank"> --}}
+                  <a href="#" target="_blank">
+                    <p class="font-bold text-xl my-4">会社案内（修正中）</p>
                   </a>
-                  <a href="{{ asset('pdf/BUKATSU利用規約.pdf') }}" target="_blank">
-                    <p class="font-bold text-xl  my-4">利用規約</p>
+                  {{-- <a href="{{ asset('pdf/BUKATSU利用規約.pdf') }}" target="_blank"> --}}
+                  <a href="#" target="_blank">
+                    <p class="font-bold text-xl  my-4">利用規約（修正中）</p>
                   </a>
-                  <a href="{{ route('privacyPolicy') }}" target="_blank">
-                    <p class="font-bold text-xl  my-4">プライバシーポリシー</p>
+                  <a href="#" target="_blank">
+                  {{-- <a href="{{ route('privacyPolicy') }}" target="_blank"> --}}
+                    <p class="font-bold text-xl  my-4">プライバシーポリシー（修正中）</p>
                   </a>
-                  <a href="#">
+                  {{-- <a href="#">
                     <p class="font-bold text-xl  my-4">特定商取引法に基づく表示</p>
-                  </a>
-                  <a href="#">
+                  </a> --}}
+                  {{-- <a href="#">
                     <p class="font-bold text-xl  my-4">FAQ</p>
-                  </a>
+                  </a> --}}
                 </div>
                 <div class="flex justify-between items-end">
                   <div class="flex bukatsu-text-white text-3xl">
@@ -64,7 +67,7 @@
                     <img src="{{ asset('storage/default_image/logo.png') }}" width="230" alt="image">
                   </a>
                 </div>
-              </div> --}}
+              </div>
               <div class="bukatsu-bg-white py-6 text-center">
                 <p class="bukatsu-text-blue">Copyright ©︎ FORH All Rights Reseved.</p>
               </div>

@@ -36,7 +36,7 @@
             </main>
 
             <div class="footer">
-              <div class="bukatsu-bg-blue py-6 px-4 sm:px-6 lg:px-8">
+              {{-- <div class="bukatsu-bg-blue py-6 px-4 sm:px-6 lg:px-8">
                 <div class="mx-auto bukatsu-text-white">
                   <a href="{{ asset('pdf/BUKATSU会社概要.pdf') }}" target="_blank">
                     <p class="font-bold text-xl my-4">会社案内</p>
@@ -64,7 +64,7 @@
                     <img src="{{ asset('storage/default_image/logo.png') }}" width="230" alt="image">
                   </a>
                 </div>
-              </div>
+              </div> --}}
               <div class="bukatsu-bg-white py-6 text-center">
                 <p class="bukatsu-text-blue">Copyright ©︎ FORH All Rights Reseved.</p>
               </div>

@@ -16,6 +16,7 @@
         <!-- Scripts -->
         <script src="https://kit.fontawesome.com/137e363532.js" crossorigin="anonymous" defer></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.5/croppie.min.js" defer></script>
+        <script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
         <script src="{{ asset('js/app.js') }}" defer></script>
     </head>
     <body class="bukatsu-font antialiased">

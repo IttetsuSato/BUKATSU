@@ -15,7 +15,7 @@
               <x-input id="name" class="block  w-full placeholder-gray-500 placeholder-opacity-50" type="text" name="name" placeholder="部勝　太郎" :value="old('name')" required autofocus />
           </div>
 
-          <!-- Name -->
+          <!-- カタカナ -->
           <div class="">
               <x-label for="katakana" :value="__('お名前（フリガナ）')" />
               <x-input id="katakana" class="block  w-full" type="text" name="katakana" placeholder="ブカツ　タロウ" :value="old('katakana')" required autofocus />
@@ -76,7 +76,81 @@
             </div>
           </div>
 
-          <!-- エリア -->
+          <!-- 郵便番号 -->
+          <div class="">
+            <x-label for="postal_code" :value="__('郵便番号（ハイフン無し）')" />
+            <x-input id="postal_code" class="block  w-full ajaxzip3"
+            maxlength="8" onKeyUp="AjaxZip3.zip2addr(this,'','address','address');"
+
+                            type="text"
+                            placeholder="例：1234567"
+                            :value="old('postal_code')"
+                            name="postal_code"
+                            required autofocus/>
+          </div>
+
+          <!-- 住所 -->
+          <div class="">
+            <x-label for="address" :value="__('住所')" />
+            <x-input id="address" class="block  w-full"
+                            type="text"
+                            placeholder="郵便番号を反映します"
+                            :value="old('address')"
+                            name="address"
+                            autofocus/>
+          </div>
+
+          <!-- 電話番号 -->
+          <div class="">
+            <x-label for="phone" :value="__('電話番号（ハイフン無し）')" />
+            <x-input id="phone" class="block  w-full"
+                            type="text"
+                            placeholder="例：00022220000"
+                            :value="old('phone')"
+                            name="phone"
+                            required autofocus/>
+          </div>
+
+          <!-- 最終学歴 -->
+          <div class="">
+            <x-label for="final_education" :value="__('最終学歴')" />
+            <select class="border text-lg leading-8  py-2 px-5 pr-8 block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="final_education" id="final_education" autofocus>
+              <option disabled selected value> -- 最終学歴を選択 -- </option>
+              <option value="中学卒">中学卒</option>
+              <option value="高校卒">高校卒</option>
+              <option value="大学卒">大学卒</option>
+            </select>
+          </div>
+
+          <!-- 卒業校 -->
+          <div class="">
+            <x-label for="graduated_from" :value="__('卒業した学校名')" />
+            <x-input id="graduated_from" class="block  w-full" 
+            type="text" 
+            name="graduated_from" 
+            :value="old('graduated_from')"
+            autofocus />
+          </div>
+
+          <!-- 移動手段 -->
+          <div class="">
+            <x-label for="transportation" :value="__('自家用車の有無')" />
+            <div id="transportation"  class="text-lg leading-6 px-5 py-4">
+              <div class="mx-2 inline">
+                <label for="haveCar">車あり</label>
+                <input id="haveCar" type="radio" name="transportation" value="車あり" autofocus />
+              </div>
+              <div class="mx-2 inline">
+                <label for="haventCar">車なし</label>
+                <input id="haventCar"  type="radio" name="transportation" value="車なし" autofocus />
+              </div>
+            </div>
+          </div>
+
+
+
+
+          {{-- <!-- エリア -->
           <div class="">
             <x-label for="area" :value="__('エリア')" />
             <select class="border text-lg leading-8  py-2 px-5 pr-8 block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="area" id="area" required autofocus>
@@ -88,7 +162,7 @@
             </select>
           </div>
 
-          <!-- 市町村 -->
+          <!-- 旧市町村 -->
           <div class="">
             <x-label for="city" :value="__('市町村')" />
             <select class="border text-lg leading-8  py-2 px-5 pr-8 block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="city_id" id="city"required autofocus>
@@ -101,7 +175,12 @@
               </optgroup>
               @endforeach
             </select>
-          </div>
+          </div> --}}
+
+          <!-- 市町村 -->
+          <div class=" hidden">
+            <input type="text" name="city" id="city">
+        </div>
           
           <!-- 指導種目 -->
           <div class="">
@@ -122,7 +201,7 @@
           </div>
 
           <!-- プロフィール -->
-          <div>
+          {{-- <div>
             <x-label for="profile" :value="__('主な実績・プロフィール')" />
             <textarea rows="4" name="profile" id="profile" 
             class="w-full text-lg px-4 mb-0 leading-8 border-gray-300 placeholder-gray-500 placeholder-opacity-50 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"  
@@ -130,7 +209,7 @@
 生徒の最高実績は全道大会出場です" 
             :value="old('profile')" 
             autofocus></textarea>
-          </div>
+          </div> --}}
 
         @endif
         {{-- 指導者用フォームここまで --}}
@@ -177,7 +256,7 @@
                                   name="password_confirmation" required />
               </div>
 
-              <!-- エリア -->
+              {{-- <!-- エリア -->
               <div class="">
                 <x-label for="area" :value="__('エリア')" />
                 <select class="border text-lg leading-8  py-2 px-5 pr-8 block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="area" id="area" required autofocus>
@@ -189,7 +268,7 @@
                 </select>
               </div>
 
-              <!-- 市町村 -->
+              <!-- 旧市町村 -->
               <div class="">
                 <x-label for="city" :value="__('市町村')" />
                 <select class="border text-lg leading-8  py-2 px-5 pr-8 block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="city_id" id="city"required autofocus>
@@ -202,7 +281,12 @@
                     </optgroup>
                   @endforeach
                 </select>
-              </div>
+              </div> --}}
+
+              <!-- 旧市町村 -->
+              <div class=" hidden">
+                <input type="text" name="city" id="city">
+            </div>
         @endif
         {{-- 学校用フォームここまで --}}
 

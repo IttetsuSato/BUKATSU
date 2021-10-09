@@ -24,7 +24,7 @@ class CreateUsersTable extends Migration
             $table->string('sex')->nullable();
             $table->string('postal_code', 16)->nullable();
             $table->string('address', 32)->nullable();
-            $table->string('city')->nullable();
+            // $table->string('city')->nullable();
             $table->bigInteger('city_id')->nullable();
             $table->string('career',3)->nullable();
             $table->string('transportation', 32)->nullable();

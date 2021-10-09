@@ -152,7 +152,7 @@
 
 
 
-          {{-- <!-- エリア -->
+          <!-- エリア -->
           <div class="">
             <x-label for="area" :value="__('エリア')" />
             <select class="border text-lg leading-8  py-2 px-5 pr-8 block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="area" id="area" required autofocus>
@@ -164,7 +164,7 @@
             </select>
           </div>
 
-          <!-- 旧市町村 -->
+          <!-- 市町村 -->
           <div class="">
             <x-label for="city" :value="__('市町村')" />
             <select class="border text-lg leading-8  py-2 px-5 pr-8 block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="city_id" id="city"required autofocus>
@@ -177,13 +177,12 @@
               </optgroup>
               @endforeach
             </select>
-          </div> --}}
-
-          <!-- 市町村 -->
-          {{-- <div class=" hidden"> --}}
-          <div>
-            <input type="hidden" name="city" id="city" value="old('city')">
           </div>
+
+          <!-- 市町村(郵便番号抽出バージョン) -->
+          {{-- <div class=" hidden"> --}}
+            {{-- <input type="hidden" name="city" id="city" value="old('city')">
+          </div> --}}
           
           <!-- 指導種目 -->
           <div class="">

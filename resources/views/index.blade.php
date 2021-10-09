@@ -134,7 +134,7 @@
                 <div class="p-2">
                   <p class="bukatsu-text-white my-2">{{ $new->created_at->format('Y.m.d') }}</p>
                   <p class="bukatsu-text-white font-bold text-lg">
-                    {{ $new->city }}で{{ $club->name }}が指導できるようになりました
+                    {{ $new->city->name }}で{{ $club->name }}が指導できるようになりました
                   </p>
                 </div>
               @endforeach

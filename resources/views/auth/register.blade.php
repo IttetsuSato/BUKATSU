@@ -12,7 +12,7 @@
           <!-- Name -->
           <div>
               <x-label for="name" :value="__('お名前（フルネーム）')" />
-              <x-input id="name" class="block  w-full" type="text" name="name" placeholder="部活　太郎" :value="old('name')" required autofocus />
+              <x-input id="name" class="block  w-full placeholder-gray-500 placeholder-opacity-50" type="text" name="name" placeholder="部勝　太郎" :value="old('name')" required autofocus />
           </div>
 
           <!-- Name -->
@@ -125,9 +125,9 @@
           <div>
             <x-label for="profile" :value="__('主な実績・プロフィール')" />
             <textarea rows="4" name="profile" id="profile" 
-            class="w-full text-lg px-4 mb-0 leading-8 border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"  
-            placeholder="現役時代、100mで世界大会優勝
-外部コーチとして高校生の指導経験あり" 
+            class="w-full text-lg px-4 mb-0 leading-8 border-gray-300 placeholder-gray-500 placeholder-opacity-50 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"  
+            placeholder="学生の時バドミントン全国2回経験しており、国体北海道代表にも選ばれました。浦河第二中学校で３年間外部指導の経験があります。
+生徒の最高実績は全道大会出場です" 
             :value="old('profile')" 
             autofocus></textarea>
           </div>

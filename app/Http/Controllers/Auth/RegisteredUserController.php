@@ -102,7 +102,7 @@ class RegisteredUserController extends Controller
         if($request->attribute == 'school'){
           return redirect('registerClubs');
         }else{
-          return redirect(RouteServiceProvider::HOME);
+          return redirect('myPage');
         }
     }
 }

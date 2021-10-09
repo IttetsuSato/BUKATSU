@@ -1,7 +1,12 @@
 <x-app-layout>
   <div class="sm:px-6 lg:px-8 pt-10 bukatsu-bg-white border-b border-gray-200">
     <div class="mt-4 text-center">
-      <p class="bukatsu-text-blue font-semibold text-lg">部活と地域のスポーツ指導したい人を<br>つなぐアプリ</p>
+      <p class="bukatsu-text-blue font-semibold text-lg md:text-2xl tracking-wide">
+        BUKATSUは<br>
+        学校の部活と地域の<br>
+        スポーツ、文化系を指導したい人を<br>
+        つなぐプラットフォームです
+      </p>
     </div>
     <div class="mt-1 max-w-xl mx-auto">
       <img class="text-center mx-auto" src="{{ asset('storage/default_image/logo2.png') }}" alt="image">
@@ -26,7 +31,7 @@
           <div>
               <x-label for="email" :value="__('メールアドレス')" />
 
-              <x-input id="email" class="block w-full" type="email" name="email" placeholder="メールアドレス" :value="old('email')" required autofocus />
+              <x-input id="email" class="block w-full" type="email" name="email"  :value="old('email')" required autofocus />
           </div>
 
           <!-- Password -->
@@ -36,7 +41,6 @@
               <x-input id="password" class="block w-full"
                               type="password"
                               name="password"
-                              placeholder="パスワード"
                               required autocomplete="current-password" />
           </div>
 

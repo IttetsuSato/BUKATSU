@@ -3806,6 +3806,8 @@ __webpack_require__(/*! alpinejs */ "./node_modules/alpinejs/dist/alpine.js"); /
 
 
 function makeIntOption($id, $min, $max) {
+  console.log('makeIntOption!');
+
   for (var i = $min; i <= $max; i++) {
     $('#' + $id).append('<option value="' + i + '">' + i + '</option>');
   }

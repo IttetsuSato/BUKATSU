@@ -6,6 +6,7 @@ require('alpinejs');
 // 数字がたくさんあるoptionタグを作る関数
 function makeIntOption($id, $min, $max)
 {
+  console.log('makeIntOption!');
   for(let i = $min; i <= $max; i++){
     $('#'+ $id).append('<option value="'+i+'">' + i + '</option>')
   }

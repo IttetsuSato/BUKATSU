@@ -32,6 +32,7 @@ Route::get('area.search', [AreaController::class, 'search'])->name('area.search'
 Route::get('club.search', [ClubController::class, 'search'])->name('club.search');
 Route::get('/user.city.{city_id}', [UserController::class, 'indexByCity'])->name('user.city');
 Route::get('/user.club.{club_id}', [ClubController::class, 'indexUserByClub'])->name('user.club');
+
 Route::get('privacyPolicy', [PdfController::class, 'privacyPolicy'])->name('privacyPolicy');
 
 

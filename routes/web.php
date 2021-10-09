@@ -20,7 +20,7 @@ use App\Http\Controllers\MailController;
 |
 */
 
-Auth::routes(['verify' => true]);
+// Auth::routes(['verify' => true]);
 
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/', [HomeController::class, 'index'])

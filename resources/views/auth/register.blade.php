@@ -56,8 +56,8 @@
             <x-label for="birthday"  :value="__('生年月日')" />
             <div class="py-3 px-3">
               <select class="border-gray-400 rounded-md" name="birth_year" id="birth_year" required autofocus :value="old('birth_year')"><option disabled>年を選択</option></select>
-              <select class="border-gray-400 rounded-md mx-1" name="birth_month" id="birth_month" required autofocus :value="old('birth_month')"><option disabled>月を選択</option></select>
-              <select class="border-gray-400 rounded-md" name="birth_day" id="birth_day" required autofocus :value="old('birth_day')"><option disabled>日を選択</option></select>
+              <select class="border-gray-400 rounded-md mx-1 w-3/12" name="birth_month" id="birth_month" required autofocus :value="old('birth_month')"><option disabled>月を選択</option></select>
+              <select class="border-gray-400 rounded-md w-3/12" name="birth_day" id="birth_day" required autofocus :value="old('birth_day')"><option disabled>日を選択</option></select>
             </div>
           </div>
 
@@ -102,13 +102,12 @@
 
           <!-- 電話番号 -->
           <div class="">
-            <x-label for="phone" :value="__('電話番号（ハイフン無し）')" />
-            <x-input id="phone" class="block  w-full"
-                            type="text"
-                            placeholder="例：00022220000"
-                            :value="old('phone')"
-                            name="phone"
-                            required autofocus/>
+            <x-label for="phone"  :value="__('電話番号')" />
+            <div class="py-3 px-3">
+              <input class="border border-gray-400 w-3/12 rounded-md px-2 py-1" name="tel1" id="tel1" required autofocus :value="old('tel1')">
+              - <input class="border border-gray-400 w-3/12 rounded-md px-2 py-1 " name="tel2" id="tel2" required autofocus :value="old('tel2')">
+              - <input class="border border-gray-400 w-3/12 rounded-md px-2 py-1" name="tel3" id="tel3" required autofocus :value="old('tel3')">
+            </div>
           </div>
 
           <!-- 最終学歴 -->

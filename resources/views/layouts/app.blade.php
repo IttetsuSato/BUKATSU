@@ -44,7 +44,7 @@
                   <a href="{{ asset('pdf/BUKATSU利用規約.pdf') }}" target="_blank">
                     <p class="font-bold text-xl  my-4">利用規約</p>
                   </a>
-                  <a href="{{ asset('pdf/BUKATSUプライバシーポリシー.pdf') }}" target="_blank">
+                  <a href="{{ route('privacyPolicy') }}" target="_blank">
                     <p class="font-bold text-xl  my-4">プライバシーポリシー</p>
                   </a>
                   <a href="#">

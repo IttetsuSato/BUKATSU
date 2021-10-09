@@ -40,6 +40,7 @@ class UserSeeder extends Seeder
           'name'      => 'テストユーザー'.$i,
           'katakana'  => 'テストユーザー'.$i,
           'attribute' => 'civilian',
+          'city'      => '浦河郡浦河町',
           'city_id'   => mt_rand(1,179),
           'profile'   => '私はテストユーザーです',
           'birthday'  => '2000-05-01',

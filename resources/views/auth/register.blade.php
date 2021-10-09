@@ -80,14 +80,17 @@
           <div class="">
             <x-label for="postal_code" :value="__('郵便番号（ハイフン無し）')" />
             <x-input id="postal_code" class="block  w-full ajaxzip3"
-            maxlength="8" onKeyUp="AjaxZip3.zip2addr(this,'','address','address');"
-
+            maxlength="8" 
+            onChange="AjaxZip3.zip2addr(this, '', 'address', 'city', 'spare' );"
+            onBlur="AjaxZip3.zip2addr(this,'','address','address');"
                             type="text"
                             placeholder="例：1234567"
                             :value="old('postal_code')"
                             name="postal_code"
                             required autofocus/>
           </div>
+          {{-- AjaxZip3の市区町村だけ抽出するための掃きだめ --}}
+          <input type="hidden" name="spare">
 
           <!-- 住所 -->
           <div class="">
@@ -104,9 +107,9 @@
           <div class="">
             <x-label for="phone"  :value="__('電話番号')" />
             <div class="py-3 px-3">
-              <input class="border border-gray-400 w-3/12 rounded-md px-2 py-1" name="tel1" id="tel1" required autofocus :value="old('tel1')">
-              - <input class="border border-gray-400 w-3/12 rounded-md px-2 py-1 " name="tel2" id="tel2" required autofocus :value="old('tel2')">
-              - <input class="border border-gray-400 w-3/12 rounded-md px-2 py-1" name="tel3" id="tel3" required autofocus :value="old('tel3')">
+              <input class="border border-gray-400 w-3/12 rounded-md px-2 py-1" maxlength="4" name="tel1" id="tel1" required autofocus :value="old('tel1')">
+              - <input class="border border-gray-400 w-3/12 rounded-md px-2 py-1 " maxlength="4" name="tel2" id="tel2" required autofocus :value="old('tel2')">
+              - <input class="border border-gray-400 w-3/12 rounded-md px-2 py-1" maxlength="4" name="tel3" id="tel3" required autofocus :value="old('tel3')">
             </div>
           </div>
 
@@ -177,9 +180,10 @@
           </div> --}}
 
           <!-- 市町村 -->
-          <div class=" hidden">
-            <input type="text" name="city" id="city">
-        </div>
+          {{-- <div class=" hidden"> --}}
+          <div>
+            <input type="hidden" name="city" id="city" value="old('city')">
+          </div>
           
           <!-- 指導種目 -->
           <div class="">

@@ -61,16 +61,18 @@ class RegisteredUserController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'katakana' => ['string', 'max:255'],
             'attribute' => ['required', 'string', 'max:32'],
-            'city_id' => ['required', 'integer'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
             'birth_year' => ['integer'],
             'birth_month' => ['integer'],
             'birth_day' => ['integer'],
+            'tel1' => ['integer'],
+            'tel2' => ['integer'],
+            'tel3' => ['integer'],
             'sex' => ['string'],
+            'phone' => ['integer', 'max:16'],
             'club_id' => ['string'],
             'career' => ['integer'],
-            'profile' => ['string', 'max:500'],
         ]);
 
         if($request->birth_year && $request->birth_month && $request->birth_day){
@@ -79,20 +81,33 @@ class RegisteredUserController extends Controller
           $birthday = null;
         }
 
+        if($request->tel1 && $request->tel2 && $request->tel3){
+          $phone = $request->tel1 . $request->tel2 . $request->tel3;
+        }else{
+          $phone = null;
+        }
+
+
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'katakana' => $request->katakana,
             'attribute' => $request->attribute,
-            'city_id' => $request->city_id,
             'password' => Hash::make($request->password),
             'birthday' => $birthday,
             'sex' => $request->sex,
+            'postal_code' => $request->postal_code,
+            'address' => $request->address,
+            'city' => $request->city,
+            // 'city_id' => $request->city_id,
             'career' => $request->career,
-            'profile' => $request->profile,
+            'transportation' => $request->transportation,
+            'phone' => $phone,
+            'final_education' => $request->final_education,
+            'educated_from' => $request->educated_from,
         ]);
 
-      //中間テーブルへの保存
+      // 中間テーブルへの保存
       $user->clubs()->sync($request->club_id);
 
         event(new Registered($user));

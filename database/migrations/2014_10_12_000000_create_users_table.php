@@ -22,12 +22,15 @@ class CreateUsersTable extends Migration
             $table->string('profile',500)->nullable();
             $table->date('birthday')->nullable();
             $table->string('sex')->nullable();
-            $table->integer('postal_code')->nullable();
+            $table->string('postal_code', 16)->nullable();
             $table->string('address', 32)->nullable();
+            $table->string('city')->nullable();
             $table->bigInteger('city_id')->nullable();
-            $table->integer('career')->nullable();
+            $table->string('career',3)->nullable();
             $table->string('transportation', 32)->nullable();
-            $table->integer('phone')->nullable();
+            $table->string('phone', 16)->nullable();
+            $table->string('final_education')->nullable();
+            $table->string('graduated_from', 64)->nullable();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

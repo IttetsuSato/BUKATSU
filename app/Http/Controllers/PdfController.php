@@ -11,7 +11,7 @@ class PdfController extends Controller
     $disk = 'local';  // or 's3'
     $storage = Storage::disk($disk);
     $file_name = 'BUKATSUプライバシーポリシー.pdf';
-    $pdf_path = 'app/pdf/' . $file_name;
+    $pdf_path = 'pdf/' . $file_name;
     $file = $storage->get($pdf_path);
     return response($file, 200)
         ->header('Content-Type', 'application/pdf')

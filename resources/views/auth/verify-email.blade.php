@@ -1,28 +1,24 @@
-<x-guest-layout>
+<x-app-layout>
     <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
-        </x-slot>
 
+      <div class="px-6 py-10">
         <div class="mb-4 text-sm text-gray-600">
-            {{ __('Thanks for signing up! Before getting started, could you verify your email address by clicking on the link we just emailed to you? If you didn\'t receive the email, we will gladly send you another.') }}
+            {{ __('ご登録いただいたメールアドレスに確認用のリンクをお送りしました。もし確認用メールが送信されていない場合は、下記をクリックしてください。') }}
         </div>
 
         @if (session('status') == 'verification-link-sent')
             <div class="mb-4 font-medium text-sm text-green-600">
-                {{ __('A new verification link has been sent to the email address you provided during registration.') }}
+                {{ __('確認用のリンクを再送しました！メールをご確認ください。') }}
             </div>
         @endif
 
-        <div class="mt-4 flex items-center justify-between">
+        <div class="mt-4 flex flex-col items-center justify-between">
             <form method="POST" action="{{ route('verification.send') }}">
                 @csrf
 
                 <div>
-                    <x-button>
-                        {{ __('Resend Verification Email') }}
+                    <x-button class="my-6">
+                        {{ __('確認メールを再送信する') }}
                     </x-button>
                 </div>
             </form>
@@ -31,9 +27,10 @@
                 @csrf
 
                 <button type="submit" class="underline text-sm text-gray-600 hover:text-gray-900">
-                    {{ __('Log Out') }}
+                    {{ __('ログアウト') }}
                 </button>
             </form>
         </div>
+      </div>
     </x-auth-card>
-</x-guest-layout>
+</x-app-layout>

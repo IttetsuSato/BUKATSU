@@ -64,12 +64,12 @@
                 <div class="bukatsu-feature m-3">
                   <div class="text-8xl"><i class="fas fa-users"></i></div>
                   <h2 class="font-extrabold text-2xl my-3">指導者同士の<br>コミュティ</h2>
-                  <p class="font-bold text-left">BUKATSUの中で出会った指導者同士にコミュニティが生まれ、繋がりが持てます。</p>
+                  <p class="font-bold text-left">BUKATSUの中で出会った指導者同士にコミュニティが生まれ、指導者同士の悩みの相談や交流を持つことができます。</p>
                 </div>
                 <div class="bukatsu-feature m-3">
                   <div class="text-8xl"><i class="fas fa-user-plus"></i></div>
                   <h2 class="font-extrabold text-2xl my-3">簡単登録</h2>
-                  <p class="font-bold text-left">書面で手間のかかる登録作業もBUKATSUだとわずか、３ステップ。誰でも簡単に登録ができます</p>
+                  <p class="font-bold text-left">書面で手間のかかる登録作業もBUKATSUだとわずか、2ステップ。誰でも簡単に登録ができます</p>
                 </div>
                 <div class="bukatsu-feature m-3">
                   <div class="text-8xl"><i class="fas fa-mobile"></i></div>

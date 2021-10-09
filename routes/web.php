@@ -20,6 +20,8 @@ use App\Http\Controllers\MailController;
 |
 */
 
+Auth::routes(['verify' => true]);
+
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/', [HomeController::class, 'index'])
 ->name('top');
@@ -32,7 +34,8 @@ Route::get('/user.club.{club_id}', [ClubController::class, 'indexUserByClub'])->
 
 
 //以下はログインしないと動作しない
-Route::group(['middleware' => 'auth'], function(){
+// Route::group(['middleware' => 'auth'], function(){
+Route::middleware(['verified'])->group(function(){
   Route::get('myPage', function(){return view('user.myPage');})->name('myPage');
 
   Route::post('/confirm', [MailController::class, 'confirm'])->name('confirm');

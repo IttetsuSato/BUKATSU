@@ -6,7 +6,7 @@
 @if ($level === 'error')
 # @lang('Whoops!')
 @else
-# @lang('Hello!')
+# @lang('お知らせ')
 @endif
 @endif
 
@@ -43,7 +43,7 @@
 @if (! empty($salutation))
 {{ $salutation }}
 @else
-@lang('Regards')<br>
+@lang('どうぞ、よろしくお願いいたします')<br>
 {{ config('app.name') }}
 @endif
 

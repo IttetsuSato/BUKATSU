@@ -59,7 +59,7 @@
                 </div>
                 <div class="flex justify-between items-end">
                   <div class="flex bukatsu-text-white text-3xl">
-                    <a href="#">
+                    <a href="https://www.facebook.com/Bukatsu-100271079092538">
                       <i class="m-2 fab fa-facebook-square"></i>
                     </a>
                   </div>

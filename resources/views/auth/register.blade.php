@@ -97,7 +97,6 @@
             <x-label for="address" :value="__('住所')" />
             <x-input id="address" class="block  w-full"
                             type="text"
-                            placeholder="郵便番号を反映します"
                             :value="old('address')"
                             name="address"
                             autofocus/>

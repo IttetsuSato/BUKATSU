@@ -108,6 +108,28 @@ return [
 
     'faker_locale' => 'en_US',
 
+    'attributes' => [
+      'name' => '名前',
+      'katakana' => 'カタカナ',
+      'image' => 'イメージ',
+      'profile' => 'プロフィール',
+      'email' => 'メールアドレス',
+      'password' => 'パスワード',
+      'birth_year' => '生年月日の年',
+      'birth_month' => '生年月日の月',
+      'birth_day' => '生年月日の日',
+      'phone' => '電話番号',
+      'sex' => '性別',
+      'club_id' => '指導種目',
+      'postal_code' => '郵便番号',
+      'career' => '指導歴',
+      'address' => '住所',
+      'transportation' => '車の有無',
+      'final_education' => '最終学歴',
+      'graduated_from' => '卒業した学校名'
+    ],
+
+
     /*
     |--------------------------------------------------------------------------
     | Encryption Key

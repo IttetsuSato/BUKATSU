@@ -135,7 +135,7 @@
 
           <!-- 移動手段 -->
           <div class="">
-            <x-label for="transportation" :value="__('自家用車の有無')" />
+            <x-label for="transportation" :value="__('車の有無')" />
             <div id="transportation"  class="text-lg leading-6 px-5 py-4">
               <div class="mx-2 inline">
                 <label for="haveCar">車あり</label>

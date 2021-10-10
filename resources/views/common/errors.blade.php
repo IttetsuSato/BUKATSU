@@ -1,7 +1,7 @@
 @if (count($errors) > 0)
-<div>
+<div  class="p-6">
   <div class="font-medium text-red-600">
-    {{ __('Whoops! Something went wrong.') }}
+    {{ __('入力に誤りがあります') }}
   </div>
 
   <ul class="mt-3 list-disc list-inside text-sm text-red-600">

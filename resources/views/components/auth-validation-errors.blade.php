@@ -1,7 +1,8 @@
 @props(['errors'])
 
 @if ($errors->any())
-    <div {{ $attributes }} class="p-6">
+    <div {{ $attributes }}>
+      <div class="p-6">
         <div class="font-medium text-red-600">
             {{ __('入力に誤りがあります') }}
         </div>
@@ -11,5 +12,6 @@
                 <li>{{ $error }}</li>
             @endforeach
         </ul>
+      </div>
     </div>
 @endif

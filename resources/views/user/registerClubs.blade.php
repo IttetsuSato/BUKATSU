@@ -13,17 +13,17 @@
             <div class="px-6 py-4">
               @foreach($clubs as $club)
                 <?php
+                  $is_checked = '';
                   foreach($club->users as $user){
-                    $checked = '';
                     if($user->id == Auth::user()->id){
-                      $checked = 'checked';
+                      $is_checked = 'checked';
                       break;
                     }
                   }
-                ?>
+                  ?>
                 <div class="my-3 block">
                   <label>
-                      <input class="mr-2" type="checkbox" name="club_id[]" value="{{ $club->id }}" {{$checked}}>{{ $club->name }}
+                      <input class="mr-2" type="checkbox" name="club_id[]" value="{{ $club->id }}" {{ $is_checked }}>{{ $club->name }}
                   </label>
                 </div>
               @endforeach

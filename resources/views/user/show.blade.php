@@ -96,7 +96,7 @@
                   @csrf
                     <input class="hidden" type="hidden" name="name" id="name" value="{{$user->name}}">
                     <input class="hidden" type="hidden" name="email" id="email" value="{{$user->email}}">
-                  <div class="flex justify-evenly">
+                  <div class="flex justify-evenly mb-3 mt-5">
                     <x-button class="bukatsu-bg-red">
                       {{ __('オファーを送る') }}
                     </x-button>

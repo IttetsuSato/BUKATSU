@@ -52,6 +52,8 @@ class MailController extends Controller
     if ($request->has(['name', 'email'])) {
       $name = $request->name;
       $email = $request->email;
+    }else{
+      return back()->with('result', 'この指導者はメールアドレスが利用できない可能性があります');
     }
 
     Mail::to($email)->send(new OfferMail($name));

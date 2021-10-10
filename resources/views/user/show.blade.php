@@ -84,51 +84,25 @@
             </div>
             
             <div class="flex flex-col my-8 border border-gray-200">
-              @if( session('name'))
-              <p class="px-4 py-2 mb-2 font-bold text-lg bukatsu-text-white bukatsu-bg-blue">確認画面</p>
-              <form class="mb-6" action="{{ route('execute') }}" method="POST">
-                @csrf
-                <div class="px-5 py-3 text-grey-700 text-sm">
-                  名前：
-                  <input class="border-0 border-b border-gray-400 py-2 px-3" type="text" name="name" id="name" value="{{session('name')}}">
-                </div>
-                <div class="px-5 py-3 text-grey-700 text-sm">
-                  宛先：
-                  <input class="border-0 border-b border-gray-400 py-2 px-3" type="text" name="email" id="email" value="{{session('email')}}">
-                </div>
-                <div class="px-5 py-3 text-grey-700 text-sm">
-                  本文：
-                  <textarea class="border-gray-400 py-2 px-3 my-4 w-full" name="body" id="body"  rows="10">{{ session('body') }}</textarea>
-                </div>
-                <div class="flex justify-evenly">
-                  <x-button class="bukatsu-bg-red">
-                    {{ __('送信') }}
-                  </x-button>
-                </div>
-              </form>
-              @else
-              <p class="px-4 py-2 mb-2 font-bold text-lg bukatsu-text-white bukatsu-bg-blue">オファーメールを送る</p>
-              <form class="mb-6" action="{{ route('confirm') }}" method="POST">
-                @csrf
-                <div class="px-5 py-3 text-grey-700 text-sm">
-                  名前：
-                  <input class="border-0 border-b border-gray-400 py-2 px-3" type="text" name="name" id="name" value="{{$user->name}}">
-                </div>
-                <div class="px-5 py-3 text-grey-700 text-sm">
-                  宛先：
-                  <input class="border-0 border-b border-gray-400 py-2 px-3" type="text" name="email" id="email" value="{{$user->email}}">
-                </div>
-                {{-- <div class="px-5 py-3 text-grey-700 text-sm">
-                  本文：
-                  <textarea class="border-gray-400 py-2 px-3 my-4 w-full" name="body" id="body"  rows="10">{{ old('body') }}</textarea>
-                </div> --}}
-                <div class="flex justify-evenly">
-                  <x-button>
-                    {{ __('確認画面へ') }}
-                  </x-button>
-                </div>
-              </form>
-              @endif
+                <p class="px-4 py-2 mb-2 font-bold text-lg bukatsu-text-white bukatsu-bg-blue">オファーメールを送る</p>
+                <p class="px-5 py-3 text-grey-700 text-sm">
+                  オファーメールでは、{{$user->name}}様にオファーメッセージとともにあなたのメールアドレスを送信します。尚、今後の手続きとしては
+                </p>
+                <p class="px-5 py-2 text-grey-700 text-sm">1.{{$user->name}}様との面談</p>
+                <p class="px-5 py-2 text-grey-700 text-sm">2.オファー成立</p>
+                <p class="px-5 py-2 text-grey-700 text-sm">3.部活動指導開始</p>
+                <p class="px-5 py-3 text-grey-700 text-sm">となっております。</p>
+                <form class="mb-6" action="{{ route('execute') }}" method="POST">
+                  @csrf
+                    <input class="hidden" type="hidden" name="name" id="name" value="{{$user->name}}">
+                    <input class="hidden" type="hidden" name="email" id="email" value="{{$user->email}}">
+                  <div class="flex justify-evenly">
+                    <x-button class="bukatsu-bg-red">
+                      {{ __('オファーを送る') }}
+                    </x-button>
+                  </div>
+                </form>
+              
             </div>
             <a href="#" onclick="history.back(-1);return false;" class="block text-center w-6/12 py-3 mt-6 mx-auto font-medium rounded-sm tracking-widest text-white uppercase bg-gray-500 shadow-sm focus:outline-none hover:bg-gray-600 hover:shadow-none">
               戻る

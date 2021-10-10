@@ -26,8 +26,10 @@
             
             </div>
             <div class="flex flex-col mb-4">
-              <label class="mb-2 uppercase font-bold text-lg text-grey-darkest" for="image">実績・プロフィール</label>
-              <textarea cols="30" rows="10" name="profile" id="profile" class="border  py-2 px-3 text-grey-darkest">{{$user->profile}}</textarea>
+              <label class="mb-2 uppercase font-bold text-lg text-grey-darkest" for="image">プロフィール・実績</label>
+              <textarea cols="30" rows="10" name="profile" id="profile" class="border  py-2 px-3 text-grey-darkest"
+              placeholder="学生の時バドミントン全国2回経験しており、国体北海道代表にも選ばれました。浦河第二中学校で３年間外部指導の経験があります。
+生徒の最高実績は全道大会出場です" >{{$user->profile}}</textarea>
             </div>
             <div class="flex flex-col mb-4">
               <label class="mb-2 uppercase font-bold text-lg text-grey-darkest" for="email">Eメール</label>

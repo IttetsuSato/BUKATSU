@@ -81,7 +81,7 @@
             <x-label for="postal_code" :value="__('郵便番号（ハイフン無し）')" />
             <x-input id="postal_code" class="block  w-full ajaxzip3"
             maxlength="8" 
-            onChange="AjaxZip3.zip2addr(this, '', 'address', 'city', 'spare' );"
+            {{-- onChange="AjaxZip3.zip2addr(this, '', 'address', 'city', 'spare' );" --}}
             onBlur="AjaxZip3.zip2addr(this,'','address','address');"
                             type="text"
                             placeholder="例：1234567"
@@ -90,7 +90,7 @@
                             required autofocus/>
           </div>
           {{-- AjaxZip3の市区町村だけ抽出するための掃きだめ --}}
-          <input type="hidden" name="spare">
+          {{-- <input type="hidden" name="spare"> --}}
 
           <!-- 住所 -->
           <div class="">
@@ -147,8 +147,6 @@
               </div>
             </div>
           </div>
-
-
 
 
           <!-- エリア -->
@@ -257,7 +255,7 @@
                                   name="password_confirmation" required />
               </div>
 
-              {{-- <!-- エリア -->
+              <!-- エリア -->
               <div class="">
                 <x-label for="area" :value="__('エリア')" />
                 <select class="border text-lg leading-8  py-2 px-5 pr-8 block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="area" id="area" required autofocus>
@@ -269,7 +267,7 @@
                 </select>
               </div>
 
-              <!-- 旧市町村 -->
+              <!-- 市町村 -->
               <div class="">
                 <x-label for="city" :value="__('市町村')" />
                 <select class="border text-lg leading-8  py-2 px-5 pr-8 block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="city_id" id="city"required autofocus>
@@ -279,15 +277,10 @@
                       @foreach($cities as $city)
                       <option value="{{ $city->id }}">{{ $city->name }}</option>
                       @endforeach
-                    </optgroup>
+                  </optgroup>
                   @endforeach
                 </select>
-              </div> --}}
-
-              <!-- 旧市町村 -->
-              <div class=" hidden">
-                <input type="text" name="city" id="city">
-            </div>
+              </div>
         @endif
         {{-- 学校用フォームここまで --}}
 

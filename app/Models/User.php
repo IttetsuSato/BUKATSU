@@ -58,28 +58,28 @@ class User extends Authenticatable implements MustVerifyEmail
       return $this->belongsTo('App\Models\City');
     }
 
+    public function updateProfileImage(Array $params)
+    {
+      if(isset($params['image'])){
+        $file_name = $params['image']->store('public/image/');
+        
+        $this::where('id', $this->id)
+            ->update([
+              'image'    => basename($file_name),
+            ]);
+      }
+      return;
+    }
+
     public function updateProfile(Array $params)
     {
-        if (isset($params['image'])) {
-            $file_name = $params['image']->store('public/image/');
-
-            $this::where('id', $this->id)
-                ->update([
-                  'name'     => $params['name'],
-                  'katakana' => $params['katakana'],
-                  'image'    => basename($file_name),
-                  'profile'  => $params['profile'],
-                  'email'    => $params['email'],
-                ]);
-        } else {
-            $this::where('id', $this->id)
-                ->update([
-                  'name'     => $params['name'],
-                  'katakana' => $params['katakana'],
-                  'profile'  => $params['profile'],
-                  'email'    => $params['email'],
-                ]); 
-        }
+        $this::where('id', $this->id)
+            ->update([
+              'name'     => $params['name'],
+              'katakana' => $params['katakana'],
+              'profile'  => $params['profile'],
+              'email'    => $params['email'],
+            ]); 
 
         return;
     }

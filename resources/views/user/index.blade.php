@@ -16,7 +16,7 @@
               @if($user->image)
                 <img class="w-full" src="{{ asset('storage/image/' .$user->image) }}" alt="image">
               @else
-                <i class="text-2xl mt-6 fas fa-image"></i>
+                <img class="w-full" src="{{ asset('storage/default_image/user_default.png') }}" alt="image">
               @endif
             </div>
                 <div class="w-7/12">

@@ -12,7 +12,30 @@
             <h2 class="bukatsu-text-blue font-bold text-xl">マイページ</h2>
           </div>
           <div class="flex flex-col items-center my-6">
-
+            
+            <div class=" w-full md:w-8/12 mb-4">
+              <div class="flex flex-col items-center">
+                <div class="w-5/12">
+                  @if(Auth::user()->image)
+                  <img class="w-full" src="{{ asset('storage/image/'.Auth::user()->image) }}" alt="画像が読み込めませんでした">
+                  @else
+                  <img class="w-full" src="{{ asset('storage/default_image/user_default.png') }}" alt="image">
+                  @endif
+                </div>
+                
+                
+                <form class="" action="{{ route('user.updateImage',Auth::user()->id) }}" method="POST" enctype="multipart/form-data">
+                  @method('put')
+                  @csrf
+                  <label class="rounded-full bg-gray-100 m-2 px-3 py-2" for="image">
+                    <i class="fas fa-camera"></i>
+                    <input id="image" class="hidden" value="" type="file" name="image" autocomplete="image">
+                    編集
+                  </label>
+                  <button type="submit">送信</button>
+                </form>
+              </div>
+            </div>
             <div class="flex items-center justity-center my-4 w-full md:w-8/12">
               <a class="w-full" href="{{ route('user.edit', Auth::user()->id) }}">
                 <x-button class="w-full">

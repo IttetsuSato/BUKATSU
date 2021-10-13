@@ -107,6 +107,13 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    public function updateImage(Request $request, $id)
+    {
+      //データ更新処理
+      User::find($id)->updateProfileImage($request->all());
+      return back()->with('result','更新しました！');
+    }
+    
     public function update(Request $request, $id)
     {
       //バリデーション

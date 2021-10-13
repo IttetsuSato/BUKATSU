@@ -19,13 +19,6 @@
               <input class="border py-2 px-3 text-grey-darkest" type="text" name="katakana" id="katakana" value="{{$user->katakana}}">
             </div>
             <div class="flex flex-col mb-4">
-              <label class="mb-2 uppercase font-bold text-lg text-grey-darkest" for="image">イメージ</label>
-              <img class="w-1/2" src="{{ asset('storage/image/' .$user->image) }}" alt="プロフィール画像を設定していません">
-              {{-- <x-croppie class="w-1/2" /> --}}
-              <input id="image" type="file" name="image" class="border py-2 px-3 text-grey-darkest" autocomplete="image">
-            
-            </div>
-            <div class="flex flex-col mb-4">
               <label class="mb-2 uppercase font-bold text-lg text-grey-darkest" for="image">プロフィール・実績</label>
               <textarea cols="30" rows="10" name="profile" id="profile" class="border  py-2 px-3 text-grey-darkest"
               placeholder="学生の時バドミントン全国2回経験しており、国体北海道代表にも選ばれました。浦河第二中学校で３年間外部指導の経験があります。

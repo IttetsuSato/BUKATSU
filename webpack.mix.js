@@ -20,5 +20,4 @@ mix.js('resources/js/app.js', 'public/js')
     require('tailwindcss'),
     require('autoprefixer'),
 ]);
-mix.sass('resources/sass/mycrop.scss', 'public/css')
-    .sass('resources/sass/app.scss', 'public/css');
+mix.sass('resources/sass/app.scss', 'public/css');

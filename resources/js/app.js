@@ -6,7 +6,6 @@ require('alpinejs');
 // 数字がたくさんあるoptionタグを作る関数
 function makeIntOption($id, $min, $max)
 {
-  console.log('makeIntOption!');
   for(let i = $min; i <= $max; i++){
     $('#'+ $id).append('<option value="'+i+'">' + i + '</option>')
   }
@@ -17,6 +16,11 @@ $(function(){
   makeIntOption("birth_year",1930,2022);
   makeIntOption("birth_month",1,12);
   makeIntOption("birth_day",1,31);
+
+  // マイページで画像選択時に更新
+  $("#myPageImageInput").on('change', function(){
+    document.myPageImageForm.submit();
+  });
 
 
 // 地域の選択によって市町村のセレクトボックスが変わる(register.blade.php)

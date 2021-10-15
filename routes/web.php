@@ -41,7 +41,7 @@ Route::get('privacyPolicy', [PdfController::class, 'privacyPolicy'])->name('priv
 // Route::group(['middleware' => 'auth'], function(){
 Route::middleware(['verified'])->group(function(){
   Route::get('myPage', function(){return view('user.myPage');})->name('myPage');
-  Route::put('user.updateImage.{id}',  [UserController::class, 'updateImage'])->name('user.updateImage');
+  Route::post('user.updateImage.{id}',  [UserController::class, 'updateImage'])->name('user.updateImage');
 
   Route::post('/confirm', [MailController::class, 'confirm'])->name('confirm');
   Route::post('/execute', [MailController::class, 'execute'])->name('execute');

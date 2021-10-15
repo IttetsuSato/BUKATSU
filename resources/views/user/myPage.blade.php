@@ -15,7 +15,7 @@
             
             <div class=" w-full md:w-8/12 mb-4">
               <div class="flex flex-col items-center">
-                <div class="w-5/12">
+                <div class="w-5/12 mb-5">
                   @if(Auth::user()->image)
                   <img class="w-full" src="{{ asset('storage/image/'.Auth::user()->image) }}" alt="画像が読み込めませんでした">
                   @else
@@ -24,15 +24,13 @@
                 </div>
                 
                 
-                <form class="" action="{{ route('user.updateImage',Auth::user()->id) }}" method="POST" enctype="multipart/form-data">
-                  @method('put')
+                <form name="myPageImageForm" class="" action="{{ route('user.updateImage',Auth::user()->id) }}" method="POST" enctype="multipart/form-data">
                   @csrf
-                  <label class="rounded-full bg-gray-100 m-2 px-3 py-2" for="image">
+                  <label class="rounded-full bg-gray-100 px-3 py-2" for="myPageImageInput">
                     <i class="fas fa-camera"></i>
-                    <input id="image" class="hidden" value="" type="file" name="image" autocomplete="image">
+                    <input id="myPageImageInput" class="hidden" value="" type="file" name="image" accept="image/*" autocomplete="image">
                     編集
                   </label>
-                  <button type="submit">送信</button>
                 </form>
               </div>
             </div>

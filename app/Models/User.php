@@ -62,7 +62,7 @@ class User extends Authenticatable implements MustVerifyEmail
     {
       if(isset($params['image'])){
         $file_name = $params['image']->store('public/image/');
-        
+
         $this::where('id', $this->id)
             ->update([
               'image'    => basename($file_name),

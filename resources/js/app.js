@@ -1,6 +1,4 @@
 require('./bootstrap');
-// require('./mycrop');
-
 require('alpinejs');
 
 // 数字がたくさんあるoptionタグを作る関数

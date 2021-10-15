@@ -19,6 +19,7 @@ $(function(){
 
   // マイページで画像選択時に更新
   $("#myPageImageInput").on('change', function(){
+    console.log('detected change');
     document.myPageImageForm.submit();
   });
 

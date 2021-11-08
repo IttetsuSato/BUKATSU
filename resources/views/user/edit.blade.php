@@ -127,11 +127,11 @@
           </div> --}}
           
           <!-- 指導年数 -->
-          <div class="">
+          {{-- <div class="">
             <x-label for="career" :value="__('指導歴（年）')" />
             <select class="border text-lg leading-8  py-2 px-5 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="career" id="career" required autofocus>
             </select>
-          </div>
+          </div> --}}
           
           <!-- プロフィール -->
           <div>

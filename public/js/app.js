@@ -3804,14 +3804,14 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 __webpack_require__(/*! alpinejs */ "./node_modules/alpinejs/dist/alpine.js"); // 数字がたくさんあるoptionタグを作る関数
 
 
-function makeIntOption($id, $min, $max, $post) {
-  for (var i = $min; i <= $max; i++) {
-    $('#' + $id).append('<option value="' + i + '" <?php if ( ' + $post + ' === ' + i + ' ) { echo " selected"; } ?>>' + i + '</option>');
+function makeIntOption(id, min, max) {
+  for (var i = min; i <= max; i++) {
+    $('#' + id).append("<option value=\"".concat(i, "\"> ").concat(i, " </option>"));
   }
 }
 
 $(function () {
-  makeIntOption("career", 0, 50, "$user->career");
+  makeIntOption("career", 0, 50);
   makeIntOption("birth_year", 1930, 2022);
   makeIntOption("birth_month", 1, 12);
   makeIntOption("birth_day", 1, 31); // マイページで画像選択時に更新

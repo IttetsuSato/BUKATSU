@@ -10,25 +10,30 @@
               <div class="flex">
                 <div class="w-5/12 flex flex-col items-center justify-between mr-5">
                   @if($user->image)
-                    <img class="w-full" src="{{ asset('storage/image/' .$user->image) }}" alt="image">
+                  <img class="w-full" src="{{ asset('storage/image/' .$user->image) }}" alt="image">
                   @else
-                    <img class="w-full" src="{{ asset('storage/default_image/user_default.png') }}" alt="image">
+                  <img class="w-full" src="{{ asset('storage/default_image/user_default.png') }}" alt="image">
                   @endif
                 </div>
                 <div class="w-7/12">
                   <div class="p-2 flex flex-col justify-between h-full">
-                    <div>
-                      <p class="font-bold text-lg">{{$user->name}}</p>
-                      <p class="text-gray-600 text-xs">{{$user->katakana}}</p>
+                    <div class="flex justify-between">
+                      <div>
+                        <p class="font-bold text-lg">{{$user->name}}</p>
+                        <p class="text-gray-600 text-xs">{{$user->katakana}}</p>
+                      </div>
+                      @if($user->attribute === 'civilian')
+                        <div class="mt-2 text-md">指導歴 {{$user->career}}年</div>
+                      @endif
                     </div>
                     <div>
                       @if($user->city_id)
-                        <p class="mt-2 text-sm"><i class="bukatsu-text-darkblue fas fa-map-pin"></i> {{$user->city->name}}</p>
+                      <p class="mt-2 text-sm"><i class="bukatsu-text-darkblue fas fa-map-pin"></i> {{$user->city->name}}</p>
                       @endif
                       <p class="mt-2 text-sm">
                         <i class="bukatsu-text-darkblue fas fa-running"></i> 
                         @foreach($user->clubs as $club)
-                          {{$club->name}}<br>
+                        <span class="mr-2">{{$club->name}}</span>
                         @endforeach
                       </p>
                       <p class="mt-2 text-sm">

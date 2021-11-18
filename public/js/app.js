@@ -3811,8 +3811,8 @@ function makeIntOption(id, min, max) {
 }
 
 $(function () {
-  makeIntOption("career", 0, 50);
-  makeIntOption("birth_year", 1930, 2022);
+  makeIntOption("career", 0, 40);
+  makeIntOption("birth_year", 1985, 2021);
   makeIntOption("birth_month", 1, 12);
   makeIntOption("birth_day", 1, 31); // マイページで画像選択時に更新
 

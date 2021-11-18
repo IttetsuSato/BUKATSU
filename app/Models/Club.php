@@ -57,7 +57,6 @@ class Club extends Model
                 ->update([
                   'name' => $params['name'],
                   'attribute' => $params['attribute'],
-                  'image' => '',
                 ]); 
         }
 

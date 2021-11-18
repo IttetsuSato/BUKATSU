@@ -22,7 +22,7 @@
                         <p class="font-bold text-lg">{{$user->name}}</p>
                         <p class="text-gray-600 text-xs">{{$user->katakana}}</p>
                       </div>
-                      @if($user->attribute === 'civilian')
+                      @if($user->attribute != 'school')
                         <div class="mt-2 text-md">指導歴 {{$user->career}}年</div>
                       @endif
                     </div>

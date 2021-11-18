@@ -70,7 +70,6 @@ class ClubController extends Controller
       // create()は最初から用意されている関数
       // 戻り値は挿入されたレコードの情報
       $result = Club::storeProfile($request->all());
-      ddd($result);
       return redirect()->route('club.index');
     }
 

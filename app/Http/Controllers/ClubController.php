@@ -57,6 +57,7 @@ class ClubController extends Controller
       // バリデーション
       $validator = Validator::make($request->all(), [
         'name' => 'required | max:191',
+        'image' => 'file | image | mimes:jpeg,png,jpg | max:2048',
         'attribute' => 'required',
       ]);
       // バリデーション:エラー
@@ -68,7 +69,7 @@ class ClubController extends Controller
       }
       // create()は最初から用意されている関数
       // 戻り値は挿入されたレコードの情報
-      $result = Club::create($request->all());
+      $result = Club::storeProfile($request->all());
       return redirect()->route('club.index');
     }
 

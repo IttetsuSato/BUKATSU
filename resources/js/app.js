@@ -8,10 +8,21 @@ function makeIntOption(id, min, max)
     $('#'+ id).append(`<option value="${i}"> ${i} </option>`)
   }
 }
+// 数字がたくさんあるoptionタグを作る関数
+function makeIntOption2(id, min, max)
+{
+  for(let i = min; i <= max; i++){
+    if(i === 1985){
+      $('#'+ id).append(`<option value="${i}" selected> ${i} </option>`)
+    }else{
+      $('#'+ id).append(`<option value="${i}"> ${i} </option>`)
+    }
+  }
+}
 
 $(function(){
   makeIntOption("career",0,40);
-  makeIntOption("birth_year",1985,2021);
+  makeIntOption2("birth_year",1950,2021);
   makeIntOption("birth_month",1,12);
   makeIntOption("birth_day",1,31);
 

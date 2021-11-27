@@ -3808,11 +3808,22 @@ function makeIntOption(id, min, max) {
   for (var i = min; i <= max; i++) {
     $('#' + id).append("<option value=\"".concat(i, "\"> ").concat(i, " </option>"));
   }
+} // 数字がたくさんあるoptionタグを作る関数
+
+
+function makeIntOption2(id, min, max) {
+  for (var i = min; i <= max; i++) {
+    if (i === 1985) {
+      $('#' + id).append("<option value=\"".concat(i, "\" selected> ").concat(i, " </option>"));
+    } else {
+      $('#' + id).append("<option value=\"".concat(i, "\"> ").concat(i, " </option>"));
+    }
+  }
 }
 
 $(function () {
   makeIntOption("career", 0, 40);
-  makeIntOption("birth_year", 1985, 2021);
+  makeIntOption2("birth_year", 1950, 2021);
   makeIntOption("birth_month", 1, 12);
   makeIntOption("birth_day", 1, 31); // マイページで画像選択時に更新
 

@@ -6,6 +6,28 @@
         <div class="bg-white border-b border-gray-200">
           <p class="bukatsu-text-red my-2 text-center">{{ session('result') }}</p>
           @include('common.errors')
+          @if(Auth::user()->attribute === 'administrator')
+          <div class="flex flex-col items-center my-8">
+            <p class="bukatsu-text-red my-2">※他人の画像編集は管理者のみ表示されます</p>
+            <div class="w-5/12 mb-5">
+              @if($user->image)
+              <img class="w-full" src="{{ asset('storage/image/'.$user->image) }}" alt="画像が読み込めませんでした">
+              @else
+              <img class="w-full" src="{{ asset('storage/default_image/user_default.png') }}" alt="image">
+              @endif
+            </div>
+            
+            
+            <form name="myPageImageForm" class="" action="{{ route('user.updateImage',$user->id) }}" method="POST" enctype="multipart/form-data">
+              @csrf
+              <label class="rounded-full bg-gray-100 px-3 py-2" for="myPageImageInput">
+                <i class="fas fa-camera"></i>
+                <input id="myPageImageInput" class="hidden" value="" type="file" name="image" accept="image/*" autocomplete="image">
+                編集
+              </label>
+            </form>
+          </div>
+          @endif
 
           <form class="mb-6" action="{{ route('user.update',$user->id) }}" method="POST" enctype="multipart/form-data">
             @method('put')

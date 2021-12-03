@@ -119,6 +119,7 @@
               <option disabled selected value> -- 最終学歴を選択 -- </option>
               <option value="中学卒">中学卒</option>
               <option value="高校卒">高校卒</option>
+              <option value="高校卒">専門学校</option>
               <option value="大学卒">大学卒</option>
             </select>
           </div>

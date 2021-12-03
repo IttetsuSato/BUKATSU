@@ -34,13 +34,15 @@
                 </form>
               </div>
             </div>
-            <div class="flex items-center justity-center my-4 w-full md:w-8/12">
+            <div class="flex flex-col items-center justity-center my-4 w-full md:w-8/12">
               <a class="w-full" href="{{ route('user.edit', Auth::user()->id) }}">
                 <x-button class="w-full">
                   {{ __('ユーザー情報の変更') }}
                 </x-button>
               </a>
+              <p class="text-gray-800 py-2">※顔写真、ユーザー情報を詳しく記載することで学校側があなたを見つけやすくマッチング率を高めます。</p>
             </div>
+            
   
             <div class="flex items-center justity-center my-4  w-full md:w-8/12">
               <a class="w-full" href="{{ route('registerClubs') }}">

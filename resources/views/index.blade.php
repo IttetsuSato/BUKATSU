@@ -102,9 +102,10 @@
           <h2 class="bukatsu-text-white text-3xl font-bold tracking-wide">NEWS</h2>
         </div>
       </div>
-      <div class="my-8 grid grid-flow-col grid-cols-1 grid-rows-4 md:grid-cols-2 md:grid-rows-2">
+      <div class="my-8 flex flex-wrap">
+      {{-- <div class="my-8 grid grid-flow-col grid-cols-1 grid-rows-4 md:grid-cols-2 md:grid-rows-2"> --}}
         @foreach($news as $new)
-        <div>
+        <div class="w-full md:w-1/2">
           <div class="my-3 md:mx-4 md:px-6 md:py-3">
             @if($new->attribute === 'school')
               <div>

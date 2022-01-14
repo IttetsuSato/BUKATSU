@@ -127,7 +127,7 @@
               @foreach($new->clubs as $club)
                 <div>
                   @if($club->image)
-                    <img class="rounded-lg" src="{{ asset('storage/image/'. $club->image) }}" alt="{{$club->image}}">
+                    <img class="rounded-lg w-full" src="{{ asset('storage/image/'. $club->image) }}" alt="{{$club->image}}">
                   @else
                     <img class="rounded-lg" src="{{ asset('storage/default_image/sport.jpg') }}" alt="image">
                   @endif
@@ -138,6 +138,7 @@
                     {{ $new->city->name }}で{{ $club->name }}が指導できるようになりました
                   </p>
                 </div>
+                @break
               @endforeach
             @endif
           </div>

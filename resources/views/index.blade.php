@@ -110,9 +110,9 @@
             @if($new->attribute === 'school')
               <div>
                 @if($new->image)
-                  <img class="rounded-lg" src="{{ asset('storage/image/'. $new->image) }}" alt="image">
+                  <img class="rounded-lg  w-full" src="{{ asset('storage/image/'. $new->image) }}" alt="image">
                 @else
-                  <img class="rounded-lg" src="{{ asset('storage/default_image/school.jpg') }}" alt="image">
+                  <img class="rounded-lg  w-full" src="{{ asset('storage/default_image/school.jpg') }}" alt="image">
                 @endif
 
               </div>
@@ -129,7 +129,7 @@
                   @if($club->image)
                     <img class="rounded-lg w-full" src="{{ asset('storage/image/'. $club->image) }}" alt="{{$club->image}}">
                   @else
-                    <img class="rounded-lg" src="{{ asset('storage/default_image/sport.jpg') }}" alt="image">
+                    <img class="rounded-lg  w-full" src="{{ asset('storage/default_image/sport.jpg') }}" alt="image">
                   @endif
                 </div>
                 <div class="p-2">
